@@ -9,9 +9,9 @@ import { ShopContext } from "../../ShopContext/Shopcontext";
 import AccountBoxRoundedIcon from "@mui/icons-material/AccountBoxRounded";
 import PasswordIcon from "@mui/icons-material/Password";
 import CircularProgress from "@mui/material/CircularProgress";
-import API from "@/api/axios";
+import API from '../../api/axios'
 import { useNavigate } from "react-router";
-import Message from "@/component/Snackbar/Message";
+import Message from "../../component/Snackbar/Message";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 // import GoogleIcon from '@mui/icons-material/Google';

@@ -4,7 +4,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import { useEffect, useState } from 'react';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import API from '@/api/axios';
+import API from '../../api/axios'
 import { useNavigate, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import Message from '../../component/Snackbar/Message';

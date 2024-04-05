@@ -6,8 +6,8 @@ import { useNavigate } from "react-router";
 import { Button } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import CircularProgress from "@mui/material/CircularProgress";
-import Message from "@/component//Snackbar/Message";
-import API from "@/api/axios";
+import Message from "../../component//Snackbar/Message";
+import API from '../../api/axios'
 
 
 const ForgetPassword = () => {
