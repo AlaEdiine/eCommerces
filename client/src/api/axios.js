@@ -17,7 +17,7 @@ import axios from "axios";
 // })
 
 const API = axios.create({
-         baseURL : 'http://localhost:3001' ,
+         baseURL : 'https://ecommerces-ncev.onrender.com' ,
         // baseURL : 'https://servers-7ssr.onrender.com/' ,
     })
     
