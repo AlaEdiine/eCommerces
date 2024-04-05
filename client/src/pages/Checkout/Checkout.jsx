@@ -1,7 +1,7 @@
 import React, { useContext,  useState } from 'react'
 import { Link } from 'react-router-dom'
 import CircularProgress from "@mui/material/CircularProgress";
-import API from '@/api/axios'
+import API from '../../api/axios'
 import { ShopContext } from '../../ShopContext/Shopcontext'
 import {loadStripe} from '@stripe/stripe-js';
 import { SnackbarProvider } from 'notistack';
