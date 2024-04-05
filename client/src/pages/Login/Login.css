@@ -1,0 +1,172 @@
+
+.loginMain
+{
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background : linear-gradient( #38e416 , rgba(157, 9, 231, 0.952));
+    border-radius: 40% 60% 53% 47% / 54% 34% 66% 46% ;
+    box-shadow: 1px 1px 50px 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.loginMain:hover 
+{
+    border-radius: 60% 40% 53% 47% / 33% 47% 53% 67% ;
+}
+.p
+{
+    color: #FFF;
+    font-size: x-large;
+    font-weight: 700;
+}
+.form
+{
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.label
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.input
+{
+    padding: 10px;
+    outline: none;
+    margin: 10px;
+    color: #FFF;
+    opacity: 0.8;
+    font-weight: 400;
+    background:  rgba(255, 255, 255, 0.1);;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+::placeholder
+{
+    color: #FFF;
+    opacity: 0.6;
+}
+.box-multiples
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65%;
+}
+.loginRegisterBtn
+{
+    position: relative;
+    width: 160px;
+    height: 140px;
+    background :  linear-gradient( #16aae4 , rgba(230, 24, 24, 0.952));
+    border-radius: 49% 51% 62% 38% / 44% 47% 53% 56% ;
+    box-shadow: 1px 1px 50px 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    cursor: pointer;  
+    text-decoration: none !important;
+}
+.loginRegisterBtn:hover
+{
+    border-radius: 31% 69% 49% 51% / 56% 32% 68% 44% ;
+}
+.loginForgetBtn
+{
+    position: relative;
+    width: 200px;
+    height: 130px;
+    background : linear-gradient( #b7e416 , rgba(231, 53, 9, 0.952));
+    border-radius: 49% 51% 62% 38% / 44% 47% 53% 56% ;
+    box-shadow: 1px 1px 50px 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+.loginForgetBtn:hover
+{
+    border-radius: 68% 32% 70% 30% / 47% 48% 52% 53%   ;
+}
+
+
+
+@media ( width < 700px){
+    .container-1 , .title-1{
+        font-size: 25px;
+    }
+    .container-2{
+        width: 100%;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+   .loginMain
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px ;
+}
+.box-multiples
+{
+    width: 100% !important;
+    margin-top: 20px;
+    align-items: flex-end;
+}
+.registerLoginBtn{
+    height: 60px;
+    border-radius: 5px;
+}
+.registerFrogetBtn{
+    height: 60px;
+    border-radius: 5px;
+}
+.p{
+    flex-direction: row;
+    font-size: 17px !important;
+}
+}
+
+@media (width < 500px){
+   .container-2 {
+        width: 100%;
+        align-items: flex-start;
+    }
+    .loginMain
+    {
+        align-items: flex-start;
+    }
+    .form{
+        width: 100% !important;
+    }
+    .input{
+        width: 80% !important;
+        background: #000;
+    }
+    .loginRegisterBtn{
+        height: 60px;
+        text-align: left;
+        border-radius: 5px;
+        width: 120px;
+    }
+    .loginForgetBtn{
+        width: 150px;
+        height: 60px;
+        border-radius: 5px;
+    }
+}

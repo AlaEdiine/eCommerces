@@ -1,0 +1,46 @@
+.main{
+    position: relative;
+}
+.form-profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-form{
+    position: relative;
+    width: 90%;
+}
+.block-image-bio{
+    position: relative;
+}
+.block-info{
+    position: relative;
+    margin-top: 30px;
+}
+.adresse-input-profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.inputFormadresse{
+    position: relative;
+    width: 32%;
+    padding: 10px;
+}
+.btnConnected{
+    cursor: pointer;
+}
+.list:nth-child(even){
+background-color: rgb(231, 229, 225);
+}
+
+@media (max-width: 800px) {
+    .adresse-input-profile {
+        flex-direction: column;
+    }
+    .inputFormadresse{
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
+  }

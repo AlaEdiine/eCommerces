@@ -1,0 +1,250 @@
+.home
+{
+    display: flex;
+    background: #000000;
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
+}
+.container-1
+{
+    position: relative;
+    color: #FFF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    font-size: 70px;
+}
+.title-1
+{
+    font-size: 30px;
+}
+.container-2
+{
+    position: relative;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.registerMain
+{
+    position: relative;
+    width: 600px;
+    padding: 20px;
+    background : linear-gradient( #16aae4 , rgba(230, 24, 24, 0.952));
+    border-radius: 40% 60% 53% 47% / 54% 34% 66% 46% ;
+    box-shadow: 1px 1px 50px 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.registerMain:hover 
+{
+    border-radius: 60% 40% 53% 47% / 33% 47% 53% 67% ;
+}
+.p
+{
+    color: #FFF;
+    font-size: x-large;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+.form
+{
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.label
+{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.input
+{
+    padding: 10px;
+    width: 70%;
+    outline: none;
+    margin: 10px;
+    color: #FFF;
+    opacity: 0.8;
+    font-weight: 400;
+    background:  rgba(255, 255, 255, 0.1);;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+::placeholder
+{
+    color: #FFF;
+    opacity: 0.6;
+}
+.box-multiples
+{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around ;
+}
+.registerLoginBtn
+{
+    position: relative;
+    width: 160px;
+    height: 140px;
+    background : linear-gradient( #38e416 , rgba(157, 9, 231, 0.952));;
+    border-radius: 49% 51% 62% 38% / 44% 47% 53% 56% ;
+    box-shadow: 1px 1px 50px 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    cursor: pointer;  
+    text-decoration: none !important;
+}
+.registerLoginBtn:hover
+{
+    border-radius: 31% 69% 49% 51% / 56% 32% 68% 44% ;
+}
+.registerFrogetBtn
+{
+    position: relative;
+    width: 200px;
+    height: 130px;
+    background : linear-gradient( #b7e416 , rgba(231, 53, 9, 0.952));
+    border-radius: 49% 51% 62% 38% / 44% 47% 53% 56% ;
+    box-shadow: 1px 1px 50px 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+.registerFrogetBtn:hover
+{
+    border-radius: 68% 32% 70% 30% / 47% 48% 52% 53%   ;
+}
+.icones{
+    color: #000000;
+}
+.ShowPass{
+    position: absolute;
+    right: 17%;
+    top: 35%;
+    color: #00000083;
+}
+.button{
+    background: #000;
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 50px;
+    color: #FFF;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.attracive{
+    margin-left: 3px;
+}
+
+
+
+
+@media (width < 1000px) {
+    .home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-1 {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .container-2 {
+        width: 100%;
+    }   
+}
+
+@media ( width < 700px){
+    .container-1 , .title-1{
+        font-size: 25px;
+    }
+    .container-2{
+        width: 100%;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+   .registerMain
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px ;
+}
+.box-multiples
+{
+    width: 100% !important;
+    margin-top: 20px;
+    align-items: flex-end;
+}
+.registerLoginBtn{
+    height: 60px;
+    border-radius: 5px;
+}
+.registerFrogetBtn{
+    height: 60px;
+    border-radius: 5px;
+}
+.p{
+    flex-direction: row;
+    font-size: 17px !important;
+}
+.registerMain:hover
+{
+    border-radius: 5px;
+}
+}
+@media (width < 500px){
+   .container-2 {
+        width: 100%;
+        align-items: flex-start;
+    }
+    .registerMain
+    {
+        align-items: flex-start;
+    }
+    .form{
+        width: 100% !important;
+    }
+    .input{
+        width: 80% !important;
+        background: #000;
+    }
+    .registerLoginBtn{
+        height: 60px;
+        text-align: left;
+        border-radius: 5px;
+        width: 120px;
+    }
+    .registerFrogetBtn{
+        width: 150px;
+        height: 60px;
+        border-radius: 5px;
+    }
+}
