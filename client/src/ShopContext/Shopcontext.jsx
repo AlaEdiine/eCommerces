@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import Message from "@/component/Snackbar/Message";
-import API from "@/api/axios";
+import Message from "../component/Snackbar/Message";
+import API from '../api/axios'
 
 
 // ********
