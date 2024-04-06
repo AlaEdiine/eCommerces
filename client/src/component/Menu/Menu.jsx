@@ -95,7 +95,7 @@ const Menus = () => {
                       },
                     }}
                   >
-                    <Avatar alt="Remy Sharp" src={`http://localhost:3001/images/${valueContext.user?.Photo}`} size="lg" />
+                    <Avatar alt="Remy Sharp" src={`https://ecommerces-ncev.onrender.com/images/${valueContext.user?.Photo}`} size="lg" />
                   </Badge>
                 </div>
               )}
@@ -108,7 +108,8 @@ const Menus = () => {
                   className="badge text-dark border border-dark rounded-circle"
                   style={{ paddingBottom: 2 }}
                 >
-                  0
+                 {valueContext.dataLocalStorage?.length > 0 ? valueContext.dataLocalStorage.length  : 0}
+
                 </span>
               </small>
               <small className="btn px-0 ml-2">
@@ -117,7 +118,9 @@ const Menus = () => {
                   className="badge text-dark border border-dark rounded-circle"
                   style={{ paddingBottom: 2 }}
                 >
-                  0
+                {valueContext.cartitems?.length} 
+                16 
+
                 </span>
               </small>
             </div>

@@ -347,7 +347,7 @@ const Detail = (props) => {
                                 key={i}
                               >
                                 <img
-                                  src={`http://localhost:3001/images/${elem.userId?.Photo}`}
+                                  src={`https://ecommerces-ncev.onrender.com/images/${elem.userId?.Photo}`}
                                   alt="Imagex"
                                   className="img-fluid mr-3 mt-1"
                                   style={{ width: 45, height: 45 }}
