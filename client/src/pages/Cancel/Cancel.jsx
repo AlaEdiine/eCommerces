@@ -2,7 +2,7 @@ import React from 'react'
 
 const Cancel = () => {
   return (
-    <div>CANCEL</div>
+    <div>Cancel</div>
   )
 }
 
