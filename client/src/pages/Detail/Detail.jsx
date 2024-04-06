@@ -358,7 +358,7 @@ const Detail = (props) => {
                                     display: "flex",
                                     flexDirection: "column",
                                     margin: 1,
-                                    width: "100%",
+                                    width: "99%",
                                   }}
                                 >
                                   <h6 style={{ color: "blue" }}>
