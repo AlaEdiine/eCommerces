@@ -31,7 +31,8 @@ module.exports.verifyToken = (req, res, next) => {
   const token = req.cookies.Token;
   try {
     if (token === "undefined" || !token) {
-      return next(createError(401, "Unauthorized Token"+token));
+      res.json(req.cookies)
+      return next(createError(401, "Unauthorized Token"));
     }
     if (token) {
       jwt.verify(token, process.env.SECRET_KEY_JWT, (err, userData) => {
