@@ -131,6 +131,7 @@ module.exports.DELETE_USER = async (req, res, next) => {
 
 //TODO: GET USER
 module.exports.GET_USER = async (req, res, next) => {
+  console.log("ur in function GET_USER");
   console.log(req.infoUser);
   try {
     const result = await UUSER.findById({ _id: req.infoUser.id }).select(

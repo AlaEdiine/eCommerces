@@ -28,11 +28,12 @@ const { createError } = require("../Service/Error");
 // };
 
 module.exports.verifyToken = (req, res, next) => {
+  console.log("ur in function verifyToken");
   const token = req.cookies.Token;
+  console.log("ur token is" +token);
   try {
     if (token === "undefined" || !token) {
-      return res.status(401).json(req.cookies)
-      // return next(createError(401, "Unauthorized Token"));
+      return next(createError(401, "Unauthorized Token"+req.cookies));
     }
     if (token) {
       jwt.verify(token, process.env.SECRET_KEY_JWT, (err, userData) => {
