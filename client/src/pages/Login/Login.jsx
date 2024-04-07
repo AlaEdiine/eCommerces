@@ -12,6 +12,7 @@ import API from "../../api/axios";
 import Message from "../../component/Snackbar/Message";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import Cookies from "js-cookie";
 // import GoogleLogin from 'react-google-login-ng'
 
 const Login = () => {
@@ -48,8 +49,8 @@ const Login = () => {
           password,
         });
         setLoad(false);
-        // localStorage.setItem("Token", data.token)
-        valueContext.setUser(data);
+        Cookies.set("Token" , data.token)
+       valueContext.setUser(data.infoUser);
         navigate("/");
       } catch (err) {
         console.log(err.response.data.message);

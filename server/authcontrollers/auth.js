@@ -51,10 +51,9 @@ module.exports.LOGIN = async (req, res, next) => {
       .select("-Email");
 
     const token = GenerateToken(result);
-    return res
-    .cookie("Token", token, { httpOnly: true, maxAge: 1000 * 60 * 15, sameSite: "strict" , secure: true})
+    return res.status(200).json({infoUser ,token})
+    // .cookie("Token", token, { httpOnly: true, maxAge: 1000 * 60 * 15, sameSite: "strict" , secure: true})
     // .cookie("Token", token)
-    .status(200).json(infoUser)
   } catch (err) {
     return next(err);
   }

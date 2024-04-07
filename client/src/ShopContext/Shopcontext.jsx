@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import Message from "../component/Snackbar/Message";
 import API from '../api/axios'
+import Cookies from "js-cookie";
 
 // ********
 // Shop Context
@@ -11,6 +12,7 @@ export const ShopContext = createContext();
 // Auth Provider
 // ********
 const Context = ({ children }) => {
+  const [getCookie, setgetCookie] = useState(Cookies.get('Token') || null);
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(999);
   const [color, setColor] = useState(null);
@@ -22,6 +24,7 @@ const Context = ({ children }) => {
     JSON.parse(localStorage.getItem("data"))
   );
   const [loading, setloading] = useState(false);
+  console.log(getCookie);
   useEffect(() => {
     const token = async () => {
       setloading(true);
@@ -180,6 +183,8 @@ console.log(user);
         increaseQte,
         decreaseQte,
         Favorite,
+        getCookie,
+        setgetCookie
       }}
     >
       {children}

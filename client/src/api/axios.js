@@ -1,6 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
+const token = Cookies.get("Token")
 // export default axios.create({
 //     baseURL : 'http://localhost:3001' ,
 //     // headers:  { "authoriza": accountService.GetTokenCookies()
@@ -19,8 +20,10 @@ import Cookies from "js-cookie";
 
 const API = axios.create({
          baseURL : 'https://ecommerces-ncev.onrender.com' ,
-        //  baseURL : 'http://localhost:3001' , 
-          headers:   { 'auth' : Cookies.get('Token') || null}
+         headers:   { 
+           'auth' : token
+          }
+          //  baseURL : 'http://localhost:3001' , 
         // baseURL : 'https://servers-7ssr.onrender.com/' ,
     })
     

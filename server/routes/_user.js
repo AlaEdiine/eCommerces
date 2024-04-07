@@ -12,13 +12,13 @@ router.post('/AJOUTER', AJOUTER_USER)
 router.put('/UPDATE-PHOTO/:id' , verifyToken, PhotoUpload.single("image"), UPDATE_USER_PHOTO)
 
 // UPDATE USER
-router.put('/UPDATE/:id' , verifyToken, UPDATE_USER)
+router.put('/UPDATE/:id' , verifyToken , UPDATE_USER)
 
 // DELETE USER
 router.delete('/DELETE/:id', DELETE_USER)
 
 // GET USER
-router.get('/GET' , GET_USER)
+router.get('/GET' , verifyToken , GET_USER)
 
 // GET USER
 router.get('/GET/:id', verifyToken , GET_USER_BY_ID)

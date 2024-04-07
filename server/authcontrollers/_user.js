@@ -93,6 +93,7 @@ module.exports.UPDATE_USER_PHOTO = async (req, res, next) => {
 
 //TODO: UPDATE USER
 module.exports.UPDATE_USER = async (req, res, next) => {
+  console.log(req.headers);
   console.log(req.body);
   const form = {
     FirstName : req.body.FirstName,
@@ -131,17 +132,12 @@ module.exports.DELETE_USER = async (req, res, next) => {
 
 //TODO: GET USER
 module.exports.GET_USER = async (req, res, next) => {
-  const token = req.headers ;
   try {
-    // const result = await UUSER.findById({ _id: req.infoUser.id }).select(
-      const result = await UUSER.findById({ _id: "65ff8176e3e9e84934effc9b" }).select(
+      const result = await UUSER.findById({ _id: req.infoUser.id }).select(
         "-Password"
         );
         if (!result) return next(createError(401, "user not found"));
-        // return res.status(200).send(result);
-        jwt.verify(token, process.env.SECRET_KEY_JWT, (err, userData) => {
-          return res.status(200).json(userData , token);
-        });
+         return res.status(200).send(result);
         } catch (err) {
           return next(err);
         }

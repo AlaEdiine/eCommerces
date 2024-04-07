@@ -28,12 +28,10 @@ const { createError } = require("../Service/Error");
 // };
 
 module.exports.verifyToken = (req, res, next) => {
-  console.log("ur in function verifyToken");
-  const token = req.cookies;
-  console.log("ur token is" +token);
+  const token = req.headers.auth ;
   try {
     if (token === "undefined" || !token) {
-      return next(createError(401, "Unthorized Token"+req));
+      return next(createError(401, "Unthorized Token"));
     }
     if (token) {
       jwt.verify(token, process.env.SECRET_KEY_JWT, (err, userData) => {
