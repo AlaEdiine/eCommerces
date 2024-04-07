@@ -131,18 +131,20 @@ module.exports.DELETE_USER = async (req, res, next) => {
 
 //TODO: GET USER
 module.exports.GET_USER = async (req, res, next) => {
-  console.log(req);
+  const token = req.cookies;
   try {
     // const result = await UUSER.findById({ _id: req.infoUser.id }).select(
-    const result = await UUSER.findById({ _id: "65ff8176e3e9e84934effc9b" }).select(
-      "-Password"
-    );
-    if (!result) return next(createError(401, "user not found"));
-    // return res.status(200).send(result);
-    return res.status(200).json(req.cookies);
-  } catch (err) {
-    return next(err);
-  }
+      const result = await UUSER.findById({ _id: "65ff8176e3e9e84934effc9b" }).select(
+        "-Password"
+        );
+        if (!result) return next(createError(401, "user not found"));
+        // return res.status(200).send(result);
+        jwt.verify(token, process.env.SECRET_KEY_JWT, (err, userData) => {
+          return res.status(200).json(userData);
+        });
+        } catch (err) {
+          return next(err);
+        }
 };
 
 //TODO: GET USER BY ID
