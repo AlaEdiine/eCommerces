@@ -131,7 +131,7 @@ module.exports.DELETE_USER = async (req, res, next) => {
 
 //TODO: GET USER
 module.exports.GET_USER = async (req, res, next) => {
-  const token = req.cookies;
+  const token = req.headers;
   try {
     // const result = await UUSER.findById({ _id: req.infoUser.id }).select(
       const result = await UUSER.findById({ _id: "65ff8176e3e9e84934effc9b" }).select(
@@ -139,9 +139,9 @@ module.exports.GET_USER = async (req, res, next) => {
         );
         if (!result) return next(createError(401, "user not found"));
         // return res.status(200).send(result);
-        jwt.verify(token, process.env.SECRET_KEY_JWT, (err, userData) => {
-          return res.status(200).json(userData);
-        });
+        // jwt.verify(token, process.env.SECRET_KEY_JWT, (err, userData) => {
+        // });
+          return res.status(200).json(token);
         } catch (err) {
           return next(err);
         }

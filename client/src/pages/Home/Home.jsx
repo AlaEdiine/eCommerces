@@ -7,6 +7,7 @@ import FeaturedProducts from "../../component/FeaturedProducts/FeaturedProducts"
 import RecentProducts from "../../component/RecentProducts/RecentProducts";
 
 const Home = () => {
+
   return (
     <div>
       <SnackbarProvider autoHideDuration={2500} />
