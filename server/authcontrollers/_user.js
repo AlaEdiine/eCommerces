@@ -139,7 +139,7 @@ module.exports.GET_USER = async (req, res, next) => {
     );
     if (!result) return next(createError(401, "user not found"));
     // return res.status(200).send(result);
-    return res.status(200).json(req.cookies.connect.sid);
+    return res.status(200).json(req.cookies.connect);
   } catch (err) {
     return next(err);
   }
