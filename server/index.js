@@ -30,10 +30,10 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session());
 
-// 'https://client-57od.onrender.com',
+// 'http://localhost:3000',
 // Cors Policy
 const corsOptions ={
-  origin:'http://localhost:3000' ,
+  origin:'https://client-57od.onrender.com' ,
   credentials:true, 
   optionSuccessStatus:200
 }
