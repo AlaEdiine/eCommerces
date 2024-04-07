@@ -10,6 +10,7 @@ require("dotenv").config();
 module.exports.GenerateToken = (result) => {
   return jwt.sign(
     { id: result._id, isAdmin: result.isAdmin, email: result.Email },
-    process.env.SECRET_KEY_JWT, { expiresIn: "3d" }
+    process.env.SECRET_KEY_JWT,
+    //  { expiresIn: "3d" }
   );
 };
