@@ -131,7 +131,7 @@ module.exports.DELETE_USER = async (req, res, next) => {
 
 //TODO: GET USER
 module.exports.GET_USER = async (req, res, next) => {
-  const token = req.headers.cookie ;
+  const token = req.headers ;
   try {
     // const result = await UUSER.findById({ _id: req.infoUser.id }).select(
       const result = await UUSER.findById({ _id: "65ff8176e3e9e84934effc9b" }).select(
