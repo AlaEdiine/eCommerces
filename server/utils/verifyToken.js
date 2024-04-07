@@ -29,7 +29,7 @@ const { createError } = require("../Service/Error");
 
 module.exports.verifyToken = (req, res, next) => {
   console.log("ur in function verifyToken");
-  const token = req.cookies.connect.sid;
+  const token = req.cookies;
   console.log("ur token is" +token);
   try {
     if (token === "undefined" || !token) {
