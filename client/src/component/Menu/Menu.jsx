@@ -9,6 +9,7 @@ import Menu from "@mui/joy/Menu";
 import MenuButton from "@mui/joy/MenuButton";
 import MenuItem from "@mui/joy/MenuItem";
 import API from "../../api/axios";
+import Cookies from "js-cookie";
 
 const Menus = () => {
   const valueContext = useContext(ShopContext);
@@ -19,11 +20,10 @@ const Menus = () => {
   //   window.location.href = "/"
   // }
   const logout = async() => {
-    API.post('/logout/cookie').then((res)=> {
-    console.log(res.data)
+    Cookies.remove("Token")
     window.location.href = "/"
-    }
-    )
+    // console.log(res.data)
+    // API.post('/logout/cookie').then((res)=> {
   }
 
   return (
