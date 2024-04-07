@@ -52,7 +52,8 @@ module.exports.LOGIN = async (req, res, next) => {
 
     const token = GenerateToken(result);
     return res
-    .cookie("Token", token, { httpOnly: true, secure: true })
+    // .cookie("Token", token, { httpOnly: true, secure: true })
+    .cookie("Token", token)
     .status(200).json(infoUser)
   } catch (err) {
     return next(err);
