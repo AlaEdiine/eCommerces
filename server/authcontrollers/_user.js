@@ -63,7 +63,7 @@ module.exports.AJOUTER_USER = async (req, res, next) => {
     const token = GenerateToken(newuser);
 
     return res
-      .cookie("Token", token, { httpOnly: true, secure: true })
+      // .cookie("Token", token, { httpOnly: true, secure: true })
       .status(200)
       .json(newuser);
   } catch (err) {
@@ -131,6 +131,7 @@ module.exports.DELETE_USER = async (req, res, next) => {
 
 //TODO: GET USER
 module.exports.GET_USER = async (req, res, next) => {
+  console.log(req.infoUser);
   try {
     const result = await UUSER.findById({ _id: req.infoUser.id }).select(
       "-Password"

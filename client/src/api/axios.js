@@ -17,17 +17,19 @@ import axios from "axios";
 // })
 
 const API = axios.create({
-         baseURL : 'https://ecommerces-ncev.onrender.com' ,
+        //  baseURL : 'https://ecommerces-ncev.onrender.com' ,
+         baseURL : 'http://localhost:3001' , 
+          // headers:  'Bearer '+localStorage.getItem("Token")
         // baseURL : 'https://servers-7ssr.onrender.com/' ,
     })
     
-API.defaults.withCredentials = true
-    // Axios.interceptors.request.use((request) =>{
-    
-    //    if(accountService.BooleanToken()){
-    //         request.headers.Authorization = 'Bearer '+accountService.GetTokenCookies()
-    //    }
+    // axios.interceptors.request.use((request) =>{
+        
+    //     request.headers.Authorization = 'Bearer '+localStorage.getItem("Token")
     //     return request
-       
+        
     // })
+
+    API.defaults.withCredentials = true
+    
     export default API

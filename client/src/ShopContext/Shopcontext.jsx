@@ -2,7 +2,6 @@ import { createContext, useEffect, useState } from "react";
 import Message from "../component/Snackbar/Message";
 import API from '../api/axios'
 
-
 // ********
 // Shop Context
 // ********
@@ -23,28 +22,48 @@ const Context = ({ children }) => {
     JSON.parse(localStorage.getItem("data"))
   );
   const [loading, setloading] = useState(false);
-
-
   useEffect(() => {
     const token = async () => {
       setloading(true);
       try {
         const { data } = await API.get("/USER/GET");
         setloading(false);
+        console.log(data);
         setPersist(true);
         setUser(data);
       } catch (err) {
         setloading(false);
-        console.log(err.message);
-        console.log(err.response.status);
+        // console.log(err.message);
+        // console.log(err);
+        // console.log(err.response.status);
         setPersist(true);
       }
     };
     token();
-    return() => setloading(false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
+  useEffect(() => {
+    const token = async () => {
+      setloading(true);
+      try {
+        const { data } = await API.get("/USER/GET");
+        setloading(false);
+        console.log(data);
+        setPersist(true);
+        setUser(data);
+      } catch (err) {
+        setloading(false);
+        // console.log(err.message);
+        // console.log(err);
+        // console.log(err.response.status);
+        setPersist(true);
+      }
+    };
+    token();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+console.log(user);
   const [cartitems, setcartitems] = useState([]);
   const [signin, setsignin] = useState(false);
   const [signup, setsignup] = useState(false);

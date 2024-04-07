@@ -48,6 +48,7 @@ const Login = () => {
           password,
         });
         setLoad(false);
+        // localStorage.setItem("Token", data.token)
         valueContext.setUser(data);
         navigate("/");
       } catch (err) {

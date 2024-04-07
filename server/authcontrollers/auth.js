@@ -41,14 +41,6 @@ module.exports.LOGIN = async (req, res, next) => {
       );
     }
     const Day = new Date();
-    const obj = {
-      Date: Day.toUTCString(),
-    };
-    console.log(result.ConnectionHistory);
-    const newUpdateConnectionHistory = result.ConnectionHistory.push(
-      Day.toUTCString()
-    );
-    console.log(newUpdateConnectionHistory);
 
     const infoUser = await UUSER.findByIdAndUpdate(
       result._id,
@@ -60,9 +52,8 @@ module.exports.LOGIN = async (req, res, next) => {
 
     const token = GenerateToken(result);
     return res
-      .cookie("Token", token, { httpOnly: true, secure: true })
-      .status(200)
-      .json(infoUser);
+    .cookie("Token", token, { httpOnly: true, secure: true })
+    .status(200).json(infoUser)
   } catch (err) {
     return next(err);
   }

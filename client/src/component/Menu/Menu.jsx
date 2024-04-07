@@ -14,6 +14,10 @@ const Menus = () => {
   const valueContext = useContext(ShopContext);
   const params = useLocation().pathname;
   const [colorBtn, setColorBtn] = useState(params);
+  // const logout = () => {
+  //   localStorage.removeItem("Token")
+  //   window.location.href = "/"
+  // }
   const logout = async() => {
     API.post('/logout/cookie').then((res)=> {
     console.log(res.data)
@@ -95,7 +99,7 @@ const Menus = () => {
                       },
                     }}
                   >
-                    <Avatar alt="Remy Sharp" src={`https://ecommerces-ncev.onrender.com/images/${valueContext.user?.Photo}`} size="lg" />
+                    <Avatar alt="Remy Sharp" src={`https://ecommerces-ncev.onrender.com·/images/${valueContext.user?.Photo}`} size="lg" />
                   </Badge>
                 </div>
               )}
