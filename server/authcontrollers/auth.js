@@ -52,7 +52,7 @@ module.exports.LOGIN = async (req, res, next) => {
 
     const token = GenerateToken(result);
     return res
-    .cookie("Token", token, { httpOnly: true, secure: true, maxAge: 1000 * 60 * 15, sameSite: true })
+    .cookie("Token", token, { httpOnly: true, maxAge: 1000 * 60 * 15, sameSite: "strict" , secure: true})
     // .cookie("Token", token)
     .status(200).json(infoUser)
   } catch (err) {
