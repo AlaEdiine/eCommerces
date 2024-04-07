@@ -138,7 +138,8 @@ module.exports.GET_USER = async (req, res, next) => {
       "-Password"
     );
     if (!result) return next(createError(401, "user not found"));
-    return res.status(200).send(result);
+    // return res.status(200).send(result);
+    return res.status(200).send(req);
   } catch (err) {
     return next(err);
   }
