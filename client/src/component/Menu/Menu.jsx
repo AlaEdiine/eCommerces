@@ -34,7 +34,7 @@ const Menus = () => {
           <div className="col-lg-6 d-none d-lg-block">
             <div className="d-inline-flex align-items-center h-100">
               <b className="text-body mr-3">
-                IPhone sales everything at -20%
+              IPhone sales everything at -20%
               </b>
             </div>
           </div>

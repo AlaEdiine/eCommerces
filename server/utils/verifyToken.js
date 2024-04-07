@@ -31,7 +31,7 @@ module.exports.verifyToken = (req, res, next) => {
   const token = req.cookies.Token;
   try {
     if (token === "undefined" || !token) {
-      res.json(req.cookies)
+      return res.status(401).json(req.cookies)
       // return next(createError(401, "Unauthorized Token"));
     }
     if (token) {
