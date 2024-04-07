@@ -131,10 +131,10 @@ module.exports.DELETE_USER = async (req, res, next) => {
 
 //TODO: GET USER
 module.exports.GET_USER = async (req, res, next) => {
-  console.log("ur in function GET_USER");
   console.log(req);
   try {
-    const result = await UUSER.findById({ _id: req.infoUser.id }).select(
+    // const result = await UUSER.findById({ _id: req.infoUser.id }).select(
+    const result = await UUSER.findById({ _id: "65ff8176e3e9e84934effc9b" }).select(
       "-Password"
     );
     if (!result) return next(createError(401, "user not found"));
