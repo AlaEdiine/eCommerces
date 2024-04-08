@@ -38,7 +38,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/edit-profile" element={<EditProfile />} />
             <Route path="/setting" element={<ChangePasword />} />
-            <Route path="https://client-57od.onrender.com/success" element={<Sucess />} />
+            <Route path="/success" element={<Sucess />} />
             <Route path="https://client-57od.onrender.com/cancel" element={<Cancel />} />
           <Route path="/shop/:category" element={<Shop />} />
           <Route path="/shopdetails" element={<ShopDetails />} />
