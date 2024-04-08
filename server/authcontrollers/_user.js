@@ -42,7 +42,7 @@ module.exports.AJOUTER_USER = async (req, res, next) => {
     await verifyUser.save();
 
     // Making the link
-    const link = `http://localhost:3000/user/${newuser._id}/verify/${verifyUser.tokens}`;
+    const link = `https://client-57od.onrender.com/user/${newuser._id}/verify/${verifyUser.tokens}`;
 
     // Putting the link into an html template
     const htmlTemplate = `<div>

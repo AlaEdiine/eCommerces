@@ -30,8 +30,8 @@ module.exports.payment = async (req, res) => {
       payment_method_types : ['card'],
       line_items: lineitems,
       mode:"payment",
-      success_url: 'http://localhost:3000/sucess',
-      cancel_url:'http://localhost:3000/cancel'
+      success_url: 'https://client-57od.onrender.com/sucess',
+      cancel_url:'https://client-57od.onrender.com/cancel'
     })
     res.json({url:session.url})
   } catch (error){
