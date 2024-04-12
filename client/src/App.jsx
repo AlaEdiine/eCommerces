@@ -33,7 +33,7 @@ function App() {
     <Context>
       <BrowserRouter>
         <Routes>
-          <Route path="https://client-57od.onrender.com" element={<Layout />} >
+          <Route path="/" element={<Layout />} >
           <Route index element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/edit-profile" element={<EditProfile />} />
