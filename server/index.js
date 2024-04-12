@@ -20,11 +20,6 @@ const passportSetup = require('./passport')
 const path = require('path');
 const app = express();
 
-app.use(express.static(path.join(__dirname,"/client/build")))
-
-app.use("*", (req, res)=>{
-  res.sendFile(path.resolve(__dirname, "client","build","index.html"));
-})
 
 // Express-Session
 app.use(session({
