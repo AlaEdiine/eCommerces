@@ -2,10 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "main" : "index.js",
-  "homepage": "/",
-"proxy" : "https://client-57od.onrender.com",
-
+  
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@emailjs/browser": "^3.11.0",
