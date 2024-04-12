@@ -23,7 +23,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('*', (req, res)=>{
+app.use('*', (req, res)=>{
   res.status(200).sendFile(path.join(__dirname, 'build/index.html'));
 })
 
