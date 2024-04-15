@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import Message from "../component/Snackbar/Message";
 import API from '../api/axios'
 import Cookies from "js-cookie";
+import axios from "axios";
 
 // ********
 // Shop Context
@@ -13,6 +14,10 @@ export const ShopContext = createContext();
 // ********
 const Context = ({ children }) => {
   const [getCookie, setgetCookie] = useState(Cookies.get('Token') || null);
+  const [DATA, setDATA] = useState([]);
+  const [Filterbrand, setFilterBrand] = useState([]);
+  const [Filtercolor, setFilterColor] = useState([]);
+  const [Filterprice, setFilterPrice] = useState([]);
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(999);
   const [color, setColor] = useState(null);
@@ -24,27 +29,39 @@ const Context = ({ children }) => {
     JSON.parse(localStorage.getItem("data"))
   );
   const [loading, setloading] = useState(false);
-  console.log(getCookie);
+
   useEffect(() => {
-    const token = async () => {
+    const getDataProducts = async () => {
       setloading(true);
       try {
-        const { data } = await API.get("/USER/GET");
-        setloading(false);
-        console.log(data);
-        setPersist(true);
-        setUser(data);
-      } catch (err) {
-        setloading(false);
-        // console.log(err.message);
-        // console.log(err);
-        // console.log(err.response.status);
-        setPersist(true);
-      }
-    };
-    token();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+        const PromiseOne =  API.get("/PRODUCT/GET_ALL");
+        const PromiseTwo =  API.get("PRODUCT/BY_BRAND?brand=Apple,Laptop,MacBook,Samsung,MiniPhone");
+        const Promisethree =  API.get("PRODUCT/BY_COLOR");
+        const PromiseFoor =  API.get("PRODUCT/BY_PRICE");
+        axios.all([PromiseOne,PromiseTwo,Promisethree,PromiseFoor]).then(
+          axios.spread((...allData) =>{
+            const Products = allData[0].data
+            const DataFilterBrand = allData[1].data
+            const DataFilterColor = allData[2].data
+            const DataFilterPrice = allData[3].data
+            setDATA(Products)
+            setFilterBrand(DataFilterBrand)
+            setFilterColor(DataFilterColor)
+            setFilterPrice(DataFilterPrice)
+          })
+          )
+          setloading(false);
+        } catch (err) {
+          setloading(false);
+          console.log(err.message);
+          console.log(err);
+          console.log(err.response);
+        }
+      };
+      getDataProducts();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
   
   useEffect(() => {
     const token = async () => {
@@ -52,7 +69,6 @@ const Context = ({ children }) => {
       try {
         const { data } = await API.get("/USER/GET");
         setloading(false);
-        console.log(data);
         setPersist(true);
         setUser(data);
       } catch (err) {
@@ -66,7 +82,7 @@ const Context = ({ children }) => {
     token();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-console.log(user);
+
   const [cartitems, setcartitems] = useState([]);
   const [signin, setsignin] = useState(false);
   const [signup, setsignup] = useState(false);
@@ -148,10 +164,14 @@ console.log(user);
   // Sum TT Calc
   // ********
   const total = cartitems.reduce((pri, prod) => pri + prod.price * prod.Qte, 0);
-
+console.log(user)
   return (
     <ShopContext.Provider
       value={{
+        DATA,
+        Filterbrand,
+        Filtercolor,
+        Filterprice,
         min,
         setMin,
         max,

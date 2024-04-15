@@ -37,8 +37,8 @@ const VerifyEmail = () => {
         alignItems: "center",
         justifyContent: "center",
       }}
-    >
-      {load && <b>Loading ...</b>} <br />
+    > good
+      {/* {load && <b>Loading ...</b>} <br />
       {isEmailVerified && (
         <>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -100,7 +100,7 @@ const VerifyEmail = () => {
             </Link>
           </Box>
         </>
-      )}
+      )} */}
     </Box>
   );
 };

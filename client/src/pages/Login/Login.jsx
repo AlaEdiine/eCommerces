@@ -37,7 +37,6 @@ const Login = () => {
   };
 
 
-
 //TODO: Sending Form
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,7 +50,7 @@ const Login = () => {
         setLoad(false);
         Cookies.set("Token" , data.token)
        valueContext.setUser(data.infoUser);
-        navigate("/");
+       navigate("/");
       } catch (err) {
         console.log(err.response.data.message);
         console.log(err.response.status);
@@ -164,4 +163,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login 

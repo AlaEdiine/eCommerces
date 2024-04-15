@@ -16,9 +16,9 @@ const hpp = require("hpp")
 const { errorHandler, notFound } = require("./Middlewares/error");
 require("dotenv").config();
 require("./db");
-const passportSetup = require('./passport')
 const path = require('path');
-const app = express();
+const app = express();
+
 
 
 // Express-Session
@@ -27,8 +27,6 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
 }));
-app.use(passport.initialize())
-app.use(passport.session());
 
 // 'http://localhost:3000 https://client-57od.onrender.com',
 // Cors Policy
