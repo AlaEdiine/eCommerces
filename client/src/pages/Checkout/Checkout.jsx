@@ -18,7 +18,7 @@ const Checkout = () => {
     const { name , value } = e.target
     setForm({...form , name:value})
   }
-console.log(form);
+
 const makePayment = async() =>{
   var sumTT = valueContext.total
   const carts = valueContext.cartitems
@@ -34,9 +34,9 @@ const makePayment = async() =>{
 <div>
   <SnackbarProvider autoHideDuration={2500} />
   {valueContext.user === null ?
-  <>
+  <div>
   <p>Not found user please login</p>
-  </>
+  </div>
 :
 <>
   {/* Breadcrumb Start */}
@@ -80,7 +80,7 @@ const makePayment = async() =>{
             </div>
             <div className="col-md-6 form-group">
               <label>Address</label>
-              <input className="form-control" type="text" placeholder={valueContext.user.Address.Rue} />
+              <input className="form-control" type="text" placeholder={valueContext.user?.Address.Rue} />
             </div>
             <div className="col-md-6 form-group">
               <label>ZIP Code</label>

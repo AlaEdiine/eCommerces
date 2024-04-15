@@ -8,7 +8,6 @@ import Dropdown from "@mui/joy/Dropdown";
 import Menu from "@mui/joy/Menu";
 import MenuButton from "@mui/joy/MenuButton";
 import MenuItem from "@mui/joy/MenuItem";
-import API from "../../api/axios";
 import Cookies from "js-cookie";
 
 const Menus = () => {
@@ -99,7 +98,7 @@ const Menus = () => {
                       },
                     }}
                   >
-                    <Avatar alt="Remy Sharp" src={`https://ecommerces-ncev.onrender.com·/images/${valueContext.user?.Photo}`} size="lg" />
+                    <Avatar alt="Remy Sharp" src={`https://ecommerces-ncev.onrender.com/images/${valueContext.user?.Photo}`} size="lg" />
                   </Badge>
                 </div>
               )}

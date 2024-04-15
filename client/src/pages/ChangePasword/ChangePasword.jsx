@@ -55,6 +55,7 @@ const ChangePasword = () => {
         setCurrentPassword("")
         return Message("Password updated with success" , "success")
       } catch (err) {
+        console.log(err)
         if(err.response.status === 401){
          return navigate("/login");
         }

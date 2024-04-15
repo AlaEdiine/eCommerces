@@ -1,13 +1,11 @@
 import { CircularProgress } from '@mui/material';
 import React, { useContext } from 'react'
-import useFetch from '../../Hooks/useFetch';
 import { ShopContext } from '../../ShopContext/Shopcontext';
 
 const FilterByColor = () => {
-    const { setColor } = useContext(ShopContext);
-    const { DATA, load } = useFetch("PRODUCT/BY_COLOR");
+    const { setColor, Filtercolor, loading } = useContext(ShopContext);
 // calc sum TT
-const sumByColor = (DATA.reduce((n, {count}) => n + count, 0));
+const sumByColor = (Filtercolor.reduce((n, {count}) => n + count, 0));
 
     
   return (
@@ -15,7 +13,7 @@ const sumByColor = (DATA.reduce((n, {count}) => n + count, 0));
           <h5 className="section-title position-relative text-uppercase mb-3">
             <span className="bg-secondary pr-3">Filter by color</span>
             </h5>
-           {!load && DATA.length > 0 ? (
+           {!loading && Filtercolor.length > 0 ? (
           <div className="bg-light p-4 mb-30">
             <form>
               <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -44,7 +42,7 @@ const sumByColor = (DATA.reduce((n, {count}) => n + count, 0));
                   Black
                 </label>
                 <span className="badge border font-weight-normal">
-                  {DATA[0].count}
+                  {Filtercolor[0].count}
                 </span>
               </div>
               <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -59,7 +57,7 @@ const sumByColor = (DATA.reduce((n, {count}) => n + count, 0));
                   White
                 </label>
                 <span className="badge border font-weight-normal">
-                  {DATA[1].count}
+                  {Filtercolor[1].count}
                 </span>
               </div>
               <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -74,7 +72,7 @@ const sumByColor = (DATA.reduce((n, {count}) => n + count, 0));
                   Red
                 </label>
                 <span className="badge border font-weight-normal">
-                  {DATA[2].count}
+                  {Filtercolor[2].count}
                 </span>
               </div>
               <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -89,7 +87,7 @@ const sumByColor = (DATA.reduce((n, {count}) => n + count, 0));
                   Blue
                 </label>
                 <span className="badge border font-weight-normal">
-                  {DATA[3].count}
+                  {Filtercolor[3].count}
                 </span>
               </div>
               <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between">
@@ -104,7 +102,7 @@ const sumByColor = (DATA.reduce((n, {count}) => n + count, 0));
                   Green
                 </label>
                 <span className="badge border font-weight-normal">
-                  {DATA[4].count}
+                  {Filtercolor[4].count}
                 </span>
               </div>
             </form>

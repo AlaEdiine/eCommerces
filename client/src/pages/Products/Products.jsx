@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { SnackbarProvider } from "notistack";
 import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 import { CircularProgress } from "@mui/material";
-import useFetch from "../../Hooks/useFetch";
 import API from "../../api/axios";
 import { ShopContext } from "../../ShopContext/Shopcontext";
 import FilterByPrice from "../../component/Filter/FilterByPrice";
@@ -11,19 +10,19 @@ import FilterByColor from "../../component/Filter/FilterByColor";
 import FilterByBrand from "../../component/Filter/FilterByBrand";
 
 const Products = () => {
-  const { addTocart, search, Favorite } = useContext(ShopContext);
+
   const [lowPrice, setLowPrice] = useState(null);
   const [note, setNote] = useState(1);
 
-  const { min, max, color, brand, setColor, setBrand } =
+  const { min,setMin, max,setMax, color, brand, setColor, setBrand , loading, DATA,  addTocart, search, Favorite  } =
     useContext(ShopContext);
 
-  const { DATA, load } = useFetch("/PRODUCT/GET_ALL");
-
-
-  // useEffect(()=> {
-  //   window.scrollTo(0,0)
-  // })
+  useEffect(()=> {
+    setBrand(null)
+    setColor(null)
+    setMin(0)
+    setMax(999)
+  },[])
   const filterings = DATA.filter(
     (element, index) =>
       (index > 15) &
@@ -86,7 +85,7 @@ const Products = () => {
   };
   return (
     <div>
-      {load ? (
+      {loading ? (
         <CircularProgress />
       ) : (
         <>

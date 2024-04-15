@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import useFetch from '../../Hooks/useFetch';
+import { ShopContext } from '../../ShopContext/Shopcontext';
+
 
 const Categories = () => {
-  const { DATA, load } = useFetch(
-    "PRODUCT/BY_BRAND?brand=Apple,Laptop,MacBook,Samsung,MiniPhone"
-  );
+  const { Filterbrand } = useContext(ShopContext);
+  
   return (
     <div>
     <h2 className="section-title position-relative text-uppercase mx-xl-5 mb-4">
@@ -19,7 +19,7 @@ const Categories = () => {
             </div>
             <div className="flex-fill pl-3">
               <h6>Category: Apple</h6>
-              <small className="text-body">{DATA[0]} Products</small>
+              <small className="text-body">{Filterbrand[0]} Products</small>
             </div>
           </p>
         </p>
@@ -32,7 +32,7 @@ const Categories = () => {
             </div>
             <div className="flex-fill pl-3">
               <h6>Category : Laptop</h6>
-              <small className="text-body">{DATA[1]}  Products</small>
+              <small className="text-body">{Filterbrand[1]}  Products</small>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ const Categories = () => {
             </div>
             <div className="flex-fill pl-3">
               <h6>Category : MacBook</h6>
-              <small className="text-body">{DATA[2]}  Products</small>
+              <small className="text-body">{Filterbrand[2]}  Products</small>
             </div>
           </div>
         </p>
@@ -58,7 +58,7 @@ const Categories = () => {
             </div>
             <div className="flex-fill pl-3">
               <h6>Category : Samsung</h6>
-              <small className="text-body">{DATA[3]}  Products</small>
+              <small className="text-body">{Filterbrand[3]}  Products</small>
             </div>
           </div>
         </div>

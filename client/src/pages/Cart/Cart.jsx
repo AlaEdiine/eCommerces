@@ -9,7 +9,7 @@ import Message from "../../component/Snackbar/Message"
 const Cart = () => {
   const navigate = useNavigate();
   const {removeTocart ,cartitems , increaseQte , decreaseQte, total , user} = useContext(ShopContext)
-
+console.log(cartitems)
    const ChekoutCommand = () => {
 
     if (user === null){

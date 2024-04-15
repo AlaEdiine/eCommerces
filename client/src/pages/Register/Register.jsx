@@ -23,7 +23,6 @@ const Register = () => {
   const [form, setform] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const Values = useContext(ShopContext)
 
   // const googleConnect = () =>{
   //   window.open("http://localhost:3001/auth/google/callback" , "_self")
@@ -132,7 +131,7 @@ const Register = () => {
           <Button  onClick={getUser}  sx={{m:'5px' , color:'white'}} variant="outlined" startIcon={<FacebookIcon />}> Facebook</Button>
           <Button sx={{m:'5px' , color:'white'}} variant="outlined" startIcon={<GitHubIcon />}> Github</Button>
           </div> */}
-          <form className="form" onSubmit={handleSubmit}>
+          <form className="form" action="true" onSubmit={handleSubmit}>
             <label className="label">
               <AccountBoxRoundedIcon className="icones" />
               <input

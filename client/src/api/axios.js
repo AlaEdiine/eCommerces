@@ -19,11 +19,11 @@ const token = Cookies.get("Token")
 // })
 
 const API = axios.create({
-         baseURL : 'https://ecommerces-ncev.onrender.com' ,
+        //  baseURL : 'https://ecommerces-ncev.onrender.com' ,
+          baseURL : 'http://localhost:3001' , 
          headers:   { 
            'auth' : token
           }
-          //  baseURL : 'http://localhost:3001' , 
         // baseURL : 'https://servers-7ssr.onrender.com/' ,
     })
     

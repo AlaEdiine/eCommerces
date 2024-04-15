@@ -8,7 +8,6 @@ import FilterByPrice from "../../component/Filter/FilterByPrice";
 import FilterByColor from "../../component/Filter/FilterByColor";
 import FilterByBrand from "../../component/Filter/FilterByBrand";
 import API from "../../api/axios";
-import useFetch from "../../Hooks/useFetch";
 
 const Shop = () => {
 
@@ -18,11 +17,8 @@ const Shop = () => {
   const [lowPrice, setLowPrice] = useState(null);
   const [note, setNote] = useState(1);
 
-  const { min, max, color, brand, setColor, setBrand } =
-    useContext(ShopContext);
-
-  const { DATA, load } = useFetch("/PRODUCT/GET_ALL");
-
+  const { min, max, color, brand, setColor, setBrand, DATA, loading } =  useContext(ShopContext);
+  setBrand(location)
 
   // useEffect(()=> {
   //   window.scrollTo(0,0)
@@ -89,7 +85,7 @@ const Shop = () => {
   };
   return (
     <div>
-      {load ? (
+      {loading ? (
         <CircularProgress sx={{width:"100%"}} />
       ) : (
         <>
@@ -146,14 +142,6 @@ const Shop = () => {
                             >
                               Low Price
                             </button>
-                            {/* <button
-                        type="button"
-                        className="dropdown-item"
-                        id="high"
-                        onClick={(e) => setHighPrice(e.target.id)}
-                      >
-                        High Price
-                      </button> */}
                           </div>
                         </div>
                         <div className="btn-group ml-2">

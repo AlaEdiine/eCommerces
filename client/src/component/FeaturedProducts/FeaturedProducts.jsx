@@ -1,11 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import useFetch from "../../Hooks/useFetch";
 import { ShopContext } from "../../ShopContext/Shopcontext";
 
 const FeaturedProducts = () => {
   const Values = useContext(ShopContext);
-  const { DATA, load } = useFetch("/PRODUCT/GET_ALL");
 
   return (
     <div>
@@ -13,9 +11,9 @@ const FeaturedProducts = () => {
         <span className="bg-secondary pr-3">Featured Products</span>
       </h2>
       <div className="row px-xl-5">
-        {load
+        {Values.loading
           ? "Please Wait ..."
-          : DATA?.filter(
+          : Values.DATA?.filter(
               (prod, index) =>
                 index < 8 &&
                 prod.name

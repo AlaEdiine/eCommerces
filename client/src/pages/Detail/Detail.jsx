@@ -362,14 +362,13 @@ const Detail = (props) => {
                                   }}
                                 >
                                   <h6 style={{ color: "blue" }}>
-                                    @{elem.userId.FirstName}{" "}
-                                    {elem.userId.LastName}
+                                    @{elem.userId?.FirstName}{" "}
+                                    {elem.userId?.LastName}
                                   </h6>
                                   <small style={{ color: "gray" }}>
                                     {" "}
-                                    <i>@{elem.userId.Email}</i>
+                                    <i>@{elem.userId?.Email}</i>
                                   </small>
-                                  <div className="text-primary"></div>
                                   <p>{elem.commentaires}</p>
                                   <div
                                     className="media"

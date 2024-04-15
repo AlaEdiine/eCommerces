@@ -1,22 +1,21 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import useFetch from "../../Hooks/useFetch";
 import { ShopContext } from "../../ShopContext/Shopcontext";
 import Rating from "@mui/material/Rating";
 
 const RecentProducts = () => {
   const Values = useContext(ShopContext);
   const [value, setValue] = useState(1);
-  const { DATA, load } = useFetch("/PRODUCT/GET_ALL");
+
   return (
     <div>
       <h2 className="section-title position-relative text-uppercase mx-xl-5 mb-4">
         <span className="bg-secondary pr-3">Recent Products</span>
       </h2>
       <div className="row px-xl-5">
-        {load
+        {Values.loading
           ? "Please Wait ..."
-          : DATA?.filter(
+          : Values.DATA?.filter(
               (prod, index) =>
                 index > 7 &&
                 index < 16 &&

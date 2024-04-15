@@ -1,22 +1,19 @@
 import { CircularProgress } from "@mui/material";
 import React, { useContext } from "react";
-import useFetch from "../../Hooks/useFetch";
 import { ShopContext } from "../../ShopContext/Shopcontext";
 
 const FilterByBrand = () => {
-  const { setBrand } = useContext(ShopContext);
-  const { DATA, load } = useFetch(
-    "PRODUCT/BY_BRAND?brand=Apple,Laptop,MacBook,Samsung,MiniPhone"
-  );
+  const { setBrand, loading , Filterbrand } = useContext(ShopContext);
+
   // calc sum TT
-  const sumByBrand = DATA.reduce((e, n) => e + n, 0);
+  const sumByBrand = Filterbrand.reduce((e, n) => e + n, 0);
 
   return (
     <div>
       <h5 className="section-title position-relative text-uppercase mb-3">
         <span className="bg-secondary pr-3">Filter by Brand</span>
       </h5>
-      {!load && DATA.length > 0 ? (
+      {!loading && Filterbrand.length > 0 ? (
         <div className="bg-light p-4 mb-30">
           <form>
             <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -46,7 +43,7 @@ const FilterByBrand = () => {
               <label className="custom-control-label" htmlFor="Apple">
                 Apple
               </label>
-              <span className="badge border font-weight-normal">{DATA[0]}</span>
+              <span className="badge border font-weight-normal">{Filterbrand[0]}</span>
             </div>
             <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
               <input
@@ -59,7 +56,7 @@ const FilterByBrand = () => {
               <label className="custom-control-label" htmlFor="Laptop">
                 Laptop
               </label>
-              <span className="badge border font-weight-normal">{DATA[1]}</span>
+              <span className="badge border font-weight-normal">{Filterbrand[1]}</span>
             </div>
             <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
               <input
@@ -72,7 +69,7 @@ const FilterByBrand = () => {
               <label className="custom-control-label" htmlFor="MacBook">
                 MacBook
               </label>
-              <span className="badge border font-weight-normal">{DATA[2]}</span>
+              <span className="badge border font-weight-normal">{Filterbrand[2]}</span>
             </div>
             <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
               <input
@@ -85,7 +82,7 @@ const FilterByBrand = () => {
               <label className="custom-control-label" htmlFor="Samsung">
                 Samsung
               </label>
-              <span className="badge border font-weight-normal">{DATA[3]}</span>
+              <span className="badge border font-weight-normal">{Filterbrand[3]}</span>
             </div>
             <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between">
               <input
@@ -98,7 +95,7 @@ const FilterByBrand = () => {
               <label className="custom-control-label" htmlFor="MiniPhone">
                 Mini Phone
               </label>
-              <span className="badge border font-weight-normal">{DATA[4]}</span>
+              <span className="badge border font-weight-normal">{Filterbrand[4]}</span>
             </div>
           </form>
         </div>
