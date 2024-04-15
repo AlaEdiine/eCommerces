@@ -4,14 +4,14 @@ import API from "../api/axios";
 const useFetch  = (url) =>  {
   const [load, setload] = useState(false);
   const [error, setError] = useState(false);
-  const [DATA, setDATA] = useState([]);
+  const [dataOrder, setDataOrder] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       setload(true);
       try {
         const { data: allProducts } = await API.get(url);
-        setDATA(allProducts);
+        setDataOrder(allProducts);
       } catch (err) {
         setError(err);
       }
@@ -20,7 +20,7 @@ const useFetch  = (url) =>  {
     fetchData();
   }, [url]);
 
-  return { DATA, setDATA, load, error };
+  return { dataOrder, setDataOrder, load, error };
 }
 
 export default useFetch

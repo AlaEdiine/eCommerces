@@ -203,7 +203,7 @@ const EditProfile = () => {
                   sx={{ minWidth: 182 }}
                 >
                   <img
-                    src={file ? URL.createObjectURL(file) : `http://localhost:3001/images/${valueContext.user?.Photo}`}
+                    src={file ? URL.createObjectURL(file) : `https://ecommerces-ncev.onrender.com/images/${valueContext.user?.Photo}`}
                     loading="lazy"
                     alt=""
                   />

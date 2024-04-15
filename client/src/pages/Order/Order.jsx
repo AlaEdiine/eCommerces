@@ -11,11 +11,10 @@ const Order = () => {
   const [show, setShow] = useState(false);
 
   const ShowOrder = (val) => {
-    console.log(val);
     setShow(!show);
   };
 
-  const { DATA, load } = useFetch("/ORDER/GET_ALL");
+  const { dataOrder, load } = useFetch("/ORDER/GET_ALL");
 
   return (
     <div>
@@ -49,7 +48,7 @@ const Order = () => {
               </thead>
               {load && <CircularProgress />}
               <tbody className="align-middle">
-                {DATA.map((item, index) => (
+                {dataOrder.map((item, index) => (
                   <>
                     <tr key={item.id}>
                       <td className="align-middle">
