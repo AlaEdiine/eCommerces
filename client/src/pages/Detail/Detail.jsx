@@ -1,14 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { SnackbarProvider } from "notistack";
 import { ShopContext } from "../../ShopContext/Shopcontext";
 import { Avatar, Box, Rating, Typography } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import API from "../../api/axios";
-import useFetch from "../../Hooks/useFetch";
 import Message from "../../component/Snackbar/Message";
 
-const Detail = (props) => {
+const Detail = () => {
   const labels = {
     0.5: "Useless",
     1: "Useless+",
@@ -22,11 +21,27 @@ const Detail = (props) => {
     5: "Excellent+",
   };
   const location = useLocation();
-  const { DATA, setDATA, load } = useFetch(`/PRODUCT/GET/${location.state}`);
-  const { addTocart, user } = useContext(ShopContext);
+  const [productById , setproductById] = useState(null)
+  const [loading , setLoading] = useState(false)
+  const { addTocart, user} = useContext(ShopContext);
+
+  useEffect(() =>{
+    API.get(`/PRODUCT/GET/${location.state}`).then((res) => 
+    setproductById(res.data)
+    ).catch((err) => console.log(err))
+  } , [])
+//TODO: Validation Form
+const HandleValidation = () => {
+  if (user === null) {
+    Message("You are not authenticated, please login", "error");
+    return false;
+  } 
+  return true;
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(HandleValidation()){
     try {
       const { data } = await API.put(`/PRODUCT/UPDATE/${location.state}`, {
         comment,
@@ -35,12 +50,12 @@ const Detail = (props) => {
       Message("Comment added with succes ", "success");
       setValue(2);
       setComment("");
-      setDATA(data);
+      setproductById(data);
       console.log(data);
     } catch (err) {
       console.log(err);
     }
-  };
+  }};
 
   function getLabelText(value) {
     return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
@@ -52,6 +67,12 @@ const Detail = (props) => {
   // Récupére Id Product to page -- ListProduct.jsx
   return (
     <div>
+      {productById === null ?
+      <>
+      please wait ...
+      </> 
+      :
+      <>
       <SnackbarProvider autoHideDuration={3500} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} maxSnack={3} />
       {/* Navbar End */}
       {/* Breadcrumb Start */}
@@ -78,16 +99,16 @@ const Detail = (props) => {
             >
               <div className="carousel-inner bg-light">
                 <div className="carousel-item active">
-                  <img className="w-100 h-100" src={DATA.photo} alt="Image1" />
+                  <img className="w-100 h-100" src={productById.photo} alt="Image1" />
                 </div>
                 <div className="carousel-item">
-                  <img className="w-100 h-100" src={DATA.photo} alt="Image2" />
+                  <img className="w-100 h-100" src={productById.photo} alt="Image2" />
                 </div>
                 <div className="carousel-item">
-                  <img className="w-100 h-100" src={DATA.photo} alt="Image3" />
+                  <img className="w-100 h-100" src={productById.photo} alt="Image3" />
                 </div>
                 <div className="carousel-item">
-                  <img className="w-100 h-100" src={DATA.photo} alt="Image4" />
+                  <img className="w-100 h-100" src={productById.photo} alt="Image4" />
                 </div>
               </div>
 
@@ -109,7 +130,7 @@ const Detail = (props) => {
           </div>
           <div className="col-lg-7 h-auto mb-30">
             <div className="h-100 bg-light p-30">
-              <h3>{DATA.name}</h3>
+              <h3>{productById.name}</h3>
               <div className="d-flex mb-3">
                 <div className="text-primary mr-2">
                   <small className="fas fa-star" />
@@ -119,17 +140,17 @@ const Detail = (props) => {
                   <small className="far fa-star" />
                 </div>
                 <small className="pt-1">
-                  ( {DATA.Comment?.length}  Reviews)
+                  ( {productById.Comment?.length}  Reviews)
                 </small>
               </div>
-              <h3 className="font-weight-semi-bold mb-4">${DATA.price}</h3>
+              <h3 className="font-weight-semi-bold mb-4">${productById.price}</h3>
               <p className="mb-4">
                 Everything related to the exact description of the product, and
                 if you like it,
                 <br />
                 you can add it to your shopping cart <br />
                 <br />
-                <b>{DATA.description}</b>
+                <b>{productById.description}</b>
               </p>
               <div className="d-flex mb-3">
               </div>
@@ -196,7 +217,7 @@ const Detail = (props) => {
               <div className="d-flex align-items-center mb-4 pt-2">
                 <button
                   className="btn btn-primary px-3"
-                  onClick={() => addTocart(DATA)}
+                  onClick={() => addTocart(productById)}
                 >
                   <i className="fa fa-shopping-cart mr-1" /> Add To Cart
                 </button>
@@ -231,7 +252,7 @@ const Detail = (props) => {
                   data-toggle="tab"
                   href="#tab-pane-1"
                 >
-                  Reviews ({DATA.Comment?.length})
+                  Reviews ({productById.Comment?.length})
                 </a>
                 <a
                   className="nav-item nav-link text-dark active"
@@ -333,13 +354,13 @@ const Detail = (props) => {
                   <div className="row">
                     <div className="col-md-6">
                       <h4 className="mb-4">
-                        {DATA.Comment?.length} - Review For "{DATA.name}"
+                        {productById.Comment?.length} - Review For "{productById.name}"
                       </h4>
-                      {load ? (
+                      {loading ? (
                         "please wait"
                       ) : (
                         <div style={{ display: "flex", flexDirection: "column-reverse"}}>
-                          {DATA?.Comment?.map((elem, i) => {
+                          {productById?.Comment?.map((elem, i) => {
                             return (
                               <div
                                 className="media"
@@ -415,7 +436,7 @@ const Detail = (props) => {
                         >
                           <Avatar
                             alt="Remy Sharp"
-                            src={`http://localhost:3001/images/${user?.Photo}`}
+                            src={`https://ecommerces-ncev.onrender.com/images/${user?.Photo}`}
                           />
                           <Typography
                             sx={{
@@ -486,6 +507,9 @@ const Detail = (props) => {
         </div>
       </div>
       {/* Shop Detail End */}
+
+      </>
+      }
     </div>
   );
 };

@@ -105,7 +105,7 @@ const Menus = () => {
 
             </div>
             <div className="d-inline-flex align-items-center d-block d-lg-none">
-              <small className="btn px-0 ml-2">
+              <Link to="/favorite" className="btn px-0 ml-2">
                 <i className="fas fa-heart text-dark" />
                 <span
                   className="badge text-dark border border-dark rounded-circle"
@@ -114,18 +114,16 @@ const Menus = () => {
                  {valueContext.dataLocalStorage?.length > 0 ? valueContext.dataLocalStorage.length  : 0}
 
                 </span>
-              </small>
-              <small className="btn px-0 ml-2">
+              </Link>
+              <Link to="/cart" className="btn px-0 ml-2">
                 <i className="fas fa-shopping-cart text-dark" />
                 <span
                   className="badge text-dark border border-dark rounded-circle"
                   style={{ paddingBottom: 2 }}
                 >
                 {valueContext.cartitems?.length} 
-                16 
-
                 </span>
-              </small>
+              </Link>
             </div>
           </div>
         </div>

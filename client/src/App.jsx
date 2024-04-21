@@ -25,6 +25,7 @@ import ChangePasword from "./pages/ChangePasword/ChangePasword";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 import Context from "./ShopContext/Shopcontext";
+import NotFound from "./component/NotFound/NotFound"
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           <Route path="/loading" element={<Loading />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </Context>

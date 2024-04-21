@@ -62,7 +62,6 @@ const Context = ({ children }) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-  
   useEffect(() => {
     const token = async () => {
       setloading(true);
@@ -164,7 +163,7 @@ const Context = ({ children }) => {
   // Sum TT Calc
   // ********
   const total = cartitems.reduce((pri, prod) => pri + prod.price * prod.Qte, 0);
-console.log(user)
+
   return (
     <ShopContext.Provider
       value={{
