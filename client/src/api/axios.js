@@ -18,8 +18,8 @@ import Cookies from "js-cookie";
 // })
 
 const API = axios.create({
-        //  baseURL : 'https://ecommerces-ncev.onrender.com' ,
-          baseURL : 'http://localhost:3001' , 
+         baseURL : 'https://ecommerces-ncev.onrender.com' ,
+          // baseURL : 'http://localhost:3001' , 
         //  headers:   { 
         //    'auth' : token
         //   }
