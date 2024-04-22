@@ -35,13 +35,15 @@ const HandleValidation = () => {
   if (user === null) {
     Message("You are not authenticated, please login", "error");
     return false;
-  } 
+  } else if (comment === null){
+    Message("Please fill in all fields!", "error");
+    return false;    
+  }
   return true;
 };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if(HandleValidation()){
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if(HandleValidation()){
     try {
       const { data } = await API.put(`/PRODUCT/UPDATE/${location.state}`, {
         comment,
@@ -56,14 +58,15 @@ const HandleValidation = () => {
       console.log(err);
     }
   }};
-
+  
   function getLabelText(value) {
     return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
   }
   const [value, setValue] = React.useState(2);
   const [comment, setComment] = useState("");
   const [hover, setHover] = React.useState(-1);
-
+  console.log(comment)
+  
   // Récupére Id Product to page -- ListProduct.jsx
   return (
     <div>

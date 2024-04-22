@@ -19,7 +19,7 @@ const Menus = () => {
   //   window.location.href = "/"
   // }
   const logout = async() => {
-    Cookies.remove("Token")
+    localStorage.removeItem("Token")
     window.location.href = "/"
     // console.log(res.data)
     // API.post('/logout/cookie').then((res)=> {

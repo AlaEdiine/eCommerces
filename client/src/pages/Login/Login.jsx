@@ -49,7 +49,7 @@ const Login = () => {
           password,
         });
         setLoad(false);
-        Cookies.set("Token" , data.token)
+        localStorage.setItem("Token",data.token)
        valueContext.setUser(data.infoUser);
         navigate("/");
       } catch (err) {
