@@ -7,6 +7,7 @@ import API from '../../api/axios'
 
 const VerifyEmail = () => {
   const { userId, tokens } = useParams();
+  console.log(userId)
   const [isEmailVerified, setisEmailVerified] = useState(null);
   const [load, setLoad] = useState(false);
 
