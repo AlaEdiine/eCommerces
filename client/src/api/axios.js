@@ -1,5 +1,4 @@
 import axios from "axios";
-import Cookies from "js-cookie";
 
 // export default axios.create({
 //     baseURL : 'http://localhost:3001' ,
@@ -18,8 +17,8 @@ import Cookies from "js-cookie";
 // })
 
 const API = axios.create({
-         baseURL : 'https://ecommerces-ncev.onrender.com' ,
-          // baseURL : 'http://localhost:3001' , 
+        //  baseURL : 'https://ecommerces-ncev.onrender.com' ,
+          baseURL : 'http://localhost:3001' , 
         //  headers:   { 
         //    'auth' : token
         //   }

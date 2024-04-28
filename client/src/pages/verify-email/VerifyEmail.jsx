@@ -6,27 +6,27 @@ import { Link, useParams } from "react-router-dom";
 import API from '../../api/axios'
 
 const VerifyEmail = () => {
-  // const { userId, tokens } = useParams();
-  // const [isEmailVerified, setisEmailVerified] = useState(null);
-  // const [load, setLoad] = useState(false);
+  const { userId, tokens } = useParams();
+  const [isEmailVerified, setisEmailVerified] = useState(null);
+  const [load, setLoad] = useState(false);
 
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     setLoad(true);
-  //     try {
-  //       const { data } = await API.get(`/AUTH/${userId}/VERIFY/${tokens}`);
-  //       console.log(data);
-  //       setisEmailVerified(true);
-  //       setLoad(false);
-  //     } catch (err) {
-  //       console.log(err.response.data.message);
-  //       console.log(err.response.status);
-  //       setLoad(false);
-  //       setisEmailVerified(false);
-  //     }
-  //   };
-  //   getUser();
-  // }, [userId, tokens]);
+  useEffect(() => {
+    const getUser = async () => {
+      setLoad(true);
+      try {
+        const { data } = await API.get(`/AUTH/${userId}/VERIFY/${tokens}`);
+        console.log(data);
+        setisEmailVerified(true);
+        setLoad(false);
+      } catch (err) {
+        console.log(err.response.data.message);
+        console.log(err.response.status);
+        setLoad(false);
+        setisEmailVerified(false);
+      }
+    };
+    getUser();
+  }, [userId, tokens]);
 
   return (
     <Box
@@ -37,8 +37,8 @@ const VerifyEmail = () => {
         alignItems: "center",
         justifyContent: "center",
       }}
-    > good
-      {/* {load && <b>Loading ...</b>} <br />
+    > 
+      {load && <b>Loading ...</b>} <br />
       {isEmailVerified && (
         <>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -100,7 +100,7 @@ const VerifyEmail = () => {
             </Link>
           </Box>
         </>
-      )} */}
+      )}
     </Box>
   );
 };
