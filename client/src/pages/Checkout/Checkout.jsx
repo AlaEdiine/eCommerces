@@ -84,7 +84,7 @@ const makePayment = async() =>{
             </div>
             <div className="col-md-6 form-group">
               <label>ZIP Code</label>
-              <input className="form-control" type="text" placeholder={valueContext.user.Address.ZIPcode} />
+              <input className="form-control" type="text" placeholder={valueContext.user?.Address.ZIPcode} />
             </div>
             <div className="col-md-6 form-group">
               <label>Country</label>

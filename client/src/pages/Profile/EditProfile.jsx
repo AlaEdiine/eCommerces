@@ -115,7 +115,7 @@ const EditProfile = () => {
                 setLoadingPhoto(false);
                 valueContext.setUser(data);
                 window.scrollTo(0,0)
-                navigate('/profile')
+                // navigate('/profile')
                 return  Message("Photo upload with success","success"); 
             } catch (error) {
               setLoadingPhoto(false);
@@ -156,7 +156,7 @@ const EditProfile = () => {
   
     return (
       <div className="main">
-        <SnackbarProvider autoHideDuration={2500} />
+        <SnackbarProvider autoHideDuration={2500} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} maxSnack={3} />
         <form onSubmit={handleSubmit} className="form-profile">
         {/* Breadcrumb Start */}
         <div className="container-fluid">

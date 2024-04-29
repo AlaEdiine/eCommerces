@@ -145,12 +145,17 @@
 @media (width < 500px){
    .container-2 {
         width: 100%;
+        height: 100%;
         align-items: flex-start;
     }
     .loginMain
     {
         align-items: flex-start;
     }
+    .loginMain:hover 
+{
+    border-radius: 40% 60% 53% 47% / 54% 34% 66% 46% ;
+}
     .form{
         width: 100% !important;
     }
