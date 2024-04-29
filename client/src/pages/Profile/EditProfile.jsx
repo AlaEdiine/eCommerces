@@ -44,6 +44,7 @@ const EditProfile = () => {
     });
     const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [loadingPhoto, setLoadingPhoto] = useState(false);
 
     const handleChange = (e) => {
       setform({ ...form, [e.target.name]: e.target.value });
@@ -107,20 +108,21 @@ const EditProfile = () => {
         const formData = new FormData();
         formData.append("image", file);
         if (file !== null) {
-            setLoading(true);
+          setLoadingPhoto(true);
             try {
              const {data} = await API.put(`/USER/UPDATE-PHOTO/${valueContext.user._id}`, formData )
                 setFile(null)
-                setLoading(false);
+                setLoadingPhoto(false);
                 valueContext.setUser(data);
                 window.scrollTo(0,0)
-                return navigate('/profile')
+                navigate('/profile')
+                return  Message("Photo upload with success","success"); 
             } catch (error) {
-              setLoading(false);
+              setLoadingPhoto(false);
               console.log(error);
               return Message(error.response.data.message, "error");
             } finally {
-              return setLoading(false);
+              return setLoadingPhoto(false);
             }
           } else {
             setLoading(false);
@@ -265,7 +267,13 @@ const EditProfile = () => {
                       Edit
                     </Button>
                     <Button variant="solid" color="primary" onClick={uploadPhoto}>
-                     Save Change Photo
+                    {loadingPhoto ?
+              <Button loading variant="plain">
+                Default
+              </Button> 
+              :
+              'Save Change Photo'
+              }   
                     </Button>
                   </Box>
                 </CardContent>
