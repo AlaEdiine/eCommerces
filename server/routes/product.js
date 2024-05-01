@@ -2,7 +2,7 @@ const router = require("express").Router();
 require("dotenv").config();
 const { createError } = require("../Service/Error");
 const { GET_ALL , UPDATE_PRODUCT, GET_PRODUCT, COUNT_BY_COLOR, COUNT_BY_PRICE, COUNT_BY_BRAND } = require("../authcontrollers/product");
-const { verifyToken, verifyTokenAdmin } = require("../utils/verifyToken");
+const { verifyToken } = require("../utils/verifyToken");
 
 // GET ALL PRODUCT
 router.get('/GET/:id', GET_PRODUCT)

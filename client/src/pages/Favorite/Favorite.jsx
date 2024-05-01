@@ -1,11 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { SnackbarProvider } from "notistack";
 import { ShopContext } from '../../ShopContext/Shopcontext'
 import Succes from '../../component/Snackbar/Succes';
+import { Box, Typography } from '@mui/material';
 
 const Favorite = () => {
-  
+  useEffect(() =>{
+    window.scrollTo(0, 0);
+  })
   const {addTocart , dataLocalStorage ,   setDataLocalStorage} = useContext(ShopContext)
 
   const removeToLocalStorage = (product) => {
@@ -144,7 +147,19 @@ const Favorite = () => {
               )})
             : 
             <div className="row px-xl-5">
-            <span className='msg'>No Favorite Products Exist Here</span>
+                 <Box    sx={{
+      mx: "15px",
+      py:"15px",
+      display: "flex",
+      width: "98%",
+      bgcolor: "red",
+      alignItems: "center",
+      justifyContent: "center",
+    }}>
+      <Typography sx={{ color: "white", fontSize: "15px" }}>
+      No Favorite Products Exist Here
+              </Typography>
+              </Box>
             </div>
             }
 

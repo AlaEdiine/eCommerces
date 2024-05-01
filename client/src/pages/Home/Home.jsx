@@ -5,9 +5,12 @@ import Categories from "../../component/Categories/Categories";
 import Offer from "../../component/Offer/Offer";
 import FeaturedProducts from "../../component/FeaturedProducts/FeaturedProducts";
 import RecentProducts from "../../component/RecentProducts/RecentProducts";
+import { useEffect } from "react";
 
 const Home = () => {
-
+  useEffect(() =>{
+    window.scrollTo(0, 0);
+  })
   return (
     <div>
       <SnackbarProvider autoHideDuration={2500} />

@@ -1,5 +1,5 @@
 import { SnackbarProvider } from 'notistack'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Message from '../../component/Snackbar/Message'
 import emailjs from "@emailjs/browser";
 import { Navigate } from 'react-router'
@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 
 
 const Contact = () => {
+  useEffect(() =>{
+    window.scrollTo(0, 0);
+  })
   const [name, setName] = useState(null)
   const [email, setEmail] = useState(null)
   const [subject, setSubject] = useState(null)

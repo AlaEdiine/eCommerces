@@ -20,9 +20,6 @@ module.exports.UPDATE_PRODUCT = async (req, res, next) => {
   commentaires : req.body.comment,
   race : req.body.value, 
   }
-  console.log(req.body);
-  console.log(req.params.id);
-  console.log(req.infoUser.id);
   try {
     const result = await PRODUCTE.findByIdAndUpdate(
       req.params.id,
@@ -53,7 +50,6 @@ module.exports.GET_PRODUCT = async (req, res , next) => {
 
 //TODO: GET  COUNT_BY_COLOR
 module.exports.COUNT_BY_COLOR  = async (req, res , next) => {
-  console.log("object");
   try{
     const BlackColorCount = await PRODUCTE.countDocuments({color : "black"}) 
     const WhiteColorCount = await PRODUCTE.countDocuments({color: "white"}) 

@@ -10,7 +10,9 @@ import FilterByColor from "../../component/Filter/FilterByColor";
 import FilterByBrand from "../../component/Filter/FilterByBrand";
 
 const Products = () => {
-
+  useEffect(() =>{
+    window.scrollTo(0, 0);
+  })
   const [lowPrice, setLowPrice] = useState(null);
   const [note, setNote] = useState(1);
 

@@ -26,6 +26,7 @@ import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 import Context from "./ShopContext/Shopcontext";
 import NotFound from "./component/NotFound/NotFound"
+import ProtectedRoute from "./routing/ProtectedRoute";
 
 
 function App() {
@@ -36,11 +37,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />} >
           <Route index element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/edit-profile" element={<EditProfile />} />
-            <Route path="/setting" element={<ChangePasword />} />
-            <Route path="/success" element={<Sucess />} />
-            <Route path="/cancel" element={<Cancel />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/sucess" element={<Sucess />} />
+          <Route path="/cancel" element={<Cancel />} />
           <Route path="/shop/:category" element={<Shop />} />
           <Route path="/shopdetails" element={<ShopDetails />} />
           <Route path="/products" element={<Products />} />
@@ -48,8 +47,12 @@ function App() {
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/order" element={<Order />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/order" element={<Order />} />
+            <Route path="/setting" element={<ChangePasword />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
           </Route>
           <Route path="/user/:userId/verify/:tokens" element={<VerifyEmail />} />
           <Route path="/notverified" element={<NotVerified />} />

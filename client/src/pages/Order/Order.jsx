@@ -1,12 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../../ShopContext/Shopcontext";
 import { SnackbarProvider } from "notistack";
 import { Link } from "react-router-dom";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import CircularProgress from "@mui/material/CircularProgress";
 import useFetch from "../../Hooks/useFetch";
+import { bgcolor } from "@mui/system";
 
 const Order = () => {
+  useEffect(() =>{
+    window.scrollTo(0, 0);
+  })
   const { total } = useContext(ShopContext);
   const [show, setShow] = useState(false);
 
@@ -107,9 +111,6 @@ const Order = () => {
                           </td>
                           <td className="align-middle">${elem.total}</td>
                           <td className="align-middle">
-                            <button className="btn btn-sm btn-danger">
-                              <i className="fa fa-times" />
-                            </button>
                           </td>
                         </tr>
                       ))}

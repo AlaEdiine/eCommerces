@@ -69,7 +69,6 @@ module.exports.LOGIN = async (req, res, next) => {
 module.exports.verifyUserAccountCtrl = async (req, res, next) => {
   try {
     const user = await UUSER.findById(req.params.userId).select("-Password");
-    console.log(user);
     // Check user exist or not
     if (!user) {
       return next(createError(400, "Invalid link"));

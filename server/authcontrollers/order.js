@@ -3,7 +3,6 @@ const { createError } = require("../Service/Error");
 
 //TODO: AJOUTER PRODUIT
 module.exports.ADD_ORDER = async (req, res , next) => {
-  console.log(req.body.dataOrder);
   try{
   
     const Day = new Date();
@@ -28,7 +27,6 @@ module.exports.ADD_ORDER = async (req, res , next) => {
 //TODO: UPDATE PRODUIT
 module.exports.UPDATE_PRODUIT = async (req, res , next) => {
   try{
-    console.log(req.params)
   const result = await PRODUIT.findByIdAndUpdate(req.params.id , {$set : req.body} , {new : true});
   if (!result) return next(createError(401, 'Error Search'))
   return res.status(200).send(result)
@@ -41,7 +39,6 @@ module.exports.UPDATE_PRODUIT = async (req, res , next) => {
 //TODO: DELETE PRODUIT
 module.exports.DELETE_PRODUIT = async (req, res , next) => {
     try{
-      console.log(req.params)
     const result = await PRODUIT.findByIdAndDelete({ _id : req.params.id });
     if (!result) return next(createError(401, 'Error Search'))
     return res.status(200).send('Succes deleted ouvrier')
@@ -54,7 +51,6 @@ module.exports.DELETE_PRODUIT = async (req, res , next) => {
 //TODO: GET PRODUIT
 module.exports.GET_PRODUIT = async (req, res , next) => {
     try{
-      console.log(req.params)
     const result = await PRODUIT.findOne({ _id : req.params.id });
     const history = await PRODUITHISTORY.find({ PrimaryKeyProduct : req.params.id });
     if (!result) return next(createError(401, 'Error Search'))
@@ -68,7 +64,6 @@ module.exports.GET_PRODUIT = async (req, res , next) => {
   
 //TODO: GET ALL PRODUIT
 module.exports.GET_ALL_ORDER = async (req, res , next) => {
-  console.log(req.infoUser.id);
     try{
     const result = await ORDER.find({userId : req.infoUser.id});
     if (!result) return next(createError(401, 'Error Search'))

@@ -13,7 +13,7 @@ import Typography from "@mui/joy/Typography";
 import Sheet from "@mui/joy/Sheet";
 import { ShopContext } from "../../ShopContext/Shopcontext";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Avatar,
   List,
@@ -26,10 +26,6 @@ import useFetch from "../../Hooks/useFetch";
 
 const Profile = () => {
   const valueContext = useContext(ShopContext);
-  const nav = useNavigate();
-  if (valueContext.user === null) {
-    nav("/login");
-  }
   const [showHistoryConnection, setshowHistoryConnection] = useState(false);
 
   const { DATA, load } = useFetch("/ORDER/GET_ALL");

@@ -93,8 +93,6 @@ module.exports.UPDATE_USER_PHOTO = async (req, res, next) => {
 
 //TODO: UPDATE USER
 module.exports.UPDATE_USER = async (req, res, next) => {
-  console.log(req.headers);
-  console.log(req.body);
   const form = {
     FirstName : req.body.FirstName,
     LastName : req.body.LastName,
@@ -121,8 +119,7 @@ module.exports.UPDATE_USER = async (req, res, next) => {
 //TODO: UPDATE USER
 module.exports.DELETE_USER = async (req, res, next) => {
   try {
-    console.log(req.params);
-    const result = await USER.findByIdAndDelete({ _id: req.params.id });
+    const result = await UUSER.findByIdAndDelete({ _id: req.params.id });
     if (!result) return next(createError(401, "Error Search"));
     return res.status(200).send("Succes deleted ouvrier");
   } catch (err) {
@@ -145,11 +142,9 @@ module.exports.GET_USER = async (req, res, next) => {
 
 //TODO: GET USER BY ID
 module.exports.GET_USER_BY_ID = async (req, res, next) => {
-  console.log(req.infoUser);
   try {
     const result = await UUSER.findById({ _id: req.infoUser.id });
     if (!result) return next(createError(401, "Error Search"));
-    console.log(result);
     return res.status(200).send(result);
   } catch (err) {
     return next(err);
@@ -159,8 +154,7 @@ module.exports.GET_USER_BY_ID = async (req, res, next) => {
 //TODO: GET ALL USER
 module.exports.GET_ALL_USER = async (req, res, next) => {
   try {
-    console.log(req.params);
-    const result = await USER.find();
+    const result = await UUSER.find();
     if (!result) return next(createError(401, "Error Search"));
     return res.status(200).send(result);
   } catch (err) {

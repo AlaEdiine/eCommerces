@@ -1,15 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import {ShopContext} from '../../ShopContext/Shopcontext'
 import { SnackbarProvider } from "notistack";
 import { Link, useNavigate } from 'react-router-dom';
 import Message from "../../component/Snackbar/Message"
+import { Box, Typography } from '@mui/material';
 
 
 
 const Cart = () => {
+  useEffect(() =>{
+    window.scrollTo(0, 0);
+  })
   const navigate = useNavigate();
   const {removeTocart ,cartitems , increaseQte , decreaseQte, total , user} = useContext(ShopContext)
-console.log(cartitems)
    const ChekoutCommand = () => {
 
     if (user === null){
@@ -77,7 +80,19 @@ console.log(cartitems)
               </tr>
             ):  <tr>
               <td colSpan={5}>
-                <span className='msg'>Your Shopping Cart is Empty </span>
+              <Box    sx={{
+      mx: "15px",
+      py:"15px",
+      display: "flex",
+      width: "98%",
+      bgcolor: "red",
+      alignItems: "center",
+      justifyContent: "center",
+    }}>
+      <Typography sx={{ color: "white", fontSize: "15px" }}>
+    Your Shopping Cart is Empty 
+              </Typography>
+              </Box>
                 </td>
                 </tr>
               }

@@ -6,7 +6,6 @@ const { GenerateToken } = require("../utils/GenerateToken");
 
 // TODO: Change Password User
 module.exports.CHANGE_PASSWORD = async (req, res, next) => {
-  console.log(req.infoUser.email);
   try {
     const { currentPassword, value } = req.body;
 

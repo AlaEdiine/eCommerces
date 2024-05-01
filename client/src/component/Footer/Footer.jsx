@@ -19,23 +19,23 @@ const Footer = () => {
         <div className="col-md-4 mb-5">
           <h5 className="text-secondary text-uppercase mb-4">Quick Shop</h5>
           <div className="d-flex flex-column justify-content-start">
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Home</Link>
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Our Shop</Link>
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Shop Detail</Link>
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Shopping Cart</Link>
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Checkout</Link>
+            <Link to='/' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Home</Link>
+            <Link to='/products' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Our Shop</Link>
+            <Link to='/favorite' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Favorite</Link>
+            <Link to='/cart' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Shoping Cart</Link>
+            <Link to='/order' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Order List</Link>
             <Link to='/contact' className="text-secondary"><i className="fa fa-angle-right mr-2" />Contact Us</Link>
           </div>
         </div>
         <div className="col-md-4 mb-5">
           <h5 className="text-secondary text-uppercase mb-4">My Account</h5>
           <div className="d-flex flex-column justify-content-start">
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Home</Link>
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Our Shop</Link>
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Shop Detail</Link>
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Shopping Cart</Link>
-            <Link className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Checkout</Link>
-            <Link className="text-secondary"><i className="fa fa-angle-right mr-2" />Contact Us</Link>
+          <Link to='/' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Home</Link>
+            <Link to='/products' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Our Shop</Link>
+            <Link to='/favorite' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Favorite</Link>
+            <Link to='/cart' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Shoping Cart</Link>
+            <Link to='/order' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Order List</Link>
+            <Link to='/contact' className="text-secondary"><i className="fa fa-angle-right mr-2" />Contact Us</Link>
           </div>
         </div>
         <div className="col-md-4 mb-5">

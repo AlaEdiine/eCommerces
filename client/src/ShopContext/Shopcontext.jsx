@@ -13,7 +13,6 @@ export const ShopContext = createContext();
 // Auth Provider
 // ********
 const Context = ({ children }) => {
-  const [getCookie, setgetCookie] = useState(Cookies.get('Token') || null);
   const [DATA, setDATA] = useState([]);
   const [Filterbrand, setFilterBrand] = useState([]);
   const [Filtercolor, setFilterColor] = useState([]);
@@ -202,8 +201,6 @@ const Context = ({ children }) => {
         increaseQte,
         decreaseQte,
         Favorite,
-        getCookie,
-        setgetCookie
       }}
     >
       {children}
