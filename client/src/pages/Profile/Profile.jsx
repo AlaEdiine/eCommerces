@@ -28,7 +28,8 @@ const Profile = () => {
   const valueContext = useContext(ShopContext);
   const [showHistoryConnection, setshowHistoryConnection] = useState(false);
 
-  const { DATA, load } = useFetch("/ORDER/GET_ALL");
+  const { dataOrder, load } = useFetch("/ORDER/GET_ALL");
+  
 
   return (
     <div className="main">
@@ -98,9 +99,9 @@ const Profile = () => {
                   <Typography
                     level="body-sm"
                     fontWeight="lg"
-                    textColor="text.tertiary"
+                    textColor="blue"
                   >
-                    Senior Journalist
+                    {valueContext.user?.Email}
                   </Typography>
                   <Sheet
                     sx={{
@@ -140,7 +141,7 @@ const Profile = () => {
                       <Typography level="body-xs" fontWeight="lg">
                         Order Recommended
                       </Typography>
-                      <Typography fontWeight="lg">{DATA?.length}</Typography>
+                      <Typography fontWeight="lg">{dataOrder?.length}</Typography>
                     </Link>
                   </Sheet>
                   <Box

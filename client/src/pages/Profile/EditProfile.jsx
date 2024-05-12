@@ -19,6 +19,7 @@ import { useState } from "react";
 import Message from "../../component/Snackbar/Message"
 import API from '../../api/axios'
 import { useNavigate } from "react-router";
+import useFetch from "../../Hooks/useFetch";
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
     clipPath: 'inset(50%)',
@@ -32,6 +33,7 @@ const VisuallyHiddenInput = styled('input')({
   });
 const EditProfile = () => {
     const valueContext = useContext(ShopContext);
+    const { dataOrder, load } = useFetch("/ORDER/GET_ALL");
     const [showHistoryConnection , setshowHistoryConnection] = useState(false)
     const navigate = useNavigate()
     const [form, setform] = useState({
@@ -226,9 +228,9 @@ const EditProfile = () => {
                   <Typography
                     level="body-sm"
                     fontWeight="lg"
-                    textColor="text.tertiary"
+                    textColor="blue"
                   >
-                    Senior Journalist
+                         {valueContext.user?.Email}
                   </Typography>
                   <Sheet
                     sx={{
@@ -257,7 +259,7 @@ const EditProfile = () => {
                       <Typography level="body-xs" fontWeight="lg">
                         Order Recommended
                       </Typography>
-                      <Typography fontWeight="lg">4</Typography>
+                      <Typography fontWeight="lg">{dataOrder?.length}</Typography>
                     </div>
                   </Sheet>
                   <Box

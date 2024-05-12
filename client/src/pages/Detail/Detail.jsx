@@ -104,31 +104,8 @@ const handleSubmit = async (e) => {
                 <div className="carousel-item active">
                   <img className="w-100 h-100" src={productById.photo} alt="Image1" />
                 </div>
-                <div className="carousel-item">
-                  <img className="w-100 h-100" src={productById.photo} alt="Image2" />
-                </div>
-                <div className="carousel-item">
-                  <img className="w-100 h-100" src={productById.photo} alt="Image3" />
-                </div>
-                <div className="carousel-item">
-                  <img className="w-100 h-100" src={productById.photo} alt="Image4" />
-                </div>
               </div>
-
-              <a
-                className="carousel-control-prev"
-                href="#product-carousel"
-                data-slide="prev"
-              >
-                <i className="fa fa-2x fa-angle-left text-dark" />
-              </a>
-              <a
-                className="carousel-control-next"
-                href="#product-carousel"
-                data-slide="next"
-              >
-                <i className="fa fa-2x fa-angle-right text-dark" />
-              </a>
+ 
             </div>
           </div>
           <div className="col-lg-7 h-auto mb-30">
@@ -157,66 +134,7 @@ const handleSubmit = async (e) => {
               </p>
               <div className="d-flex mb-3">
               </div>
-              <div className="d-flex mb-4">
-                <strong className="text-dark mr-3">Colors:</strong>
-                <form>
-                  <div className="custom-control custom-radio custom-control-inline">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      id="color-1"
-                      name="color"
-                    />
-                    <label className="custom-control-label" htmlFor="color-1">
-                      Black
-                    </label>
-                  </div>
-                  <div className="custom-control custom-radio custom-control-inline">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      id="color-2"
-                      name="color"
-                    />
-                    <label className="custom-control-label" htmlFor="color-2">
-                      White
-                    </label>
-                  </div>
-                  <div className="custom-control custom-radio custom-control-inline">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      id="color-3"
-                      name="color"
-                    />
-                    <label className="custom-control-label" htmlFor="color-3">
-                      Red
-                    </label>
-                  </div>
-                  <div className="custom-control custom-radio custom-control-inline">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      id="color-4"
-                      name="color"
-                    />
-                    <label className="custom-control-label" htmlFor="color-4">
-                      Blue
-                    </label>
-                  </div>
-                  <div className="custom-control custom-radio custom-control-inline">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      id="color-5"
-                      name="color"
-                    />
-                    <label className="custom-control-label" htmlFor="color-5">
-                      Green
-                    </label>
-                  </div>
-                </form>
-              </div>
+        
               <div className="d-flex align-items-center mb-4 pt-2">
                 <button
                   className="btn btn-primary px-3"
@@ -251,29 +169,22 @@ const handleSubmit = async (e) => {
             <div className="bg-light p-30">
               <div className="nav nav-tabs mb-4">
                 <a
-                  className="nav-item nav-link text-dark"
+                  className="nav-item nav-link text-dark active"
                   data-toggle="tab"
                   href="#tab-pane-1"
                 >
                   Reviews ({productById.Comment?.length})
                 </a>
                 <a
-                  className="nav-item nav-link text-dark active"
+                  className="nav-item nav-link text-dark"
                   data-toggle="tab"
                   href="#tab-pane-2"
                 >
                   Description
                 </a>
-                <a
-                  className="nav-item nav-link text-dark"
-                  data-toggle="tab"
-                  href="#tab-pane-3"
-                >
-                  Information
-                </a>
               </div>
               <div className="tab-content">
-                <div className="tab-pane fade show active" id="tab-pane-2">
+                <div className="tab-pane fade" id="tab-pane-2">
                   <h4 className="mb-3">Product Description</h4>
                   <p>
                     Eos no lorem eirmod diam diam, eos elitr et gubergren diam
@@ -297,63 +208,7 @@ const handleSubmit = async (e) => {
                     sed justo. Magna takimata justo et amet magna et.
                   </p>
                 </div>
-                <div className="tab-pane fade" id="tab-pane-2">
-                  <h4 className="mb-3">Additional Information</h4>
-                  <p>
-                    Eos no lorem eirmod diam diam, eos elitr et gubergren diam
-                    sea. Consetetur vero aliquyam invidunt duo dolores et duo
-                    sit. Vero diam ea vero et dolore rebum, dolor rebum eirmod
-                    consetetur invidunt sed sed et, lorem duo et eos elitr,
-                    sadipscing kasd ipsum rebum diam. Dolore diam stet rebum sed
-                    tempor kasd eirmod. Takimata kasd ipsum accusam sadipscing,
-                    eos dolores sit no ut diam consetetur duo justo est, sit
-                    sanctus diam tempor aliquyam eirmod nonumy rebum dolor
-                    accusam, ipsum kasd eos consetetur at sit rebum, diam kasd
-                    invidunt tempor lorem, ipsum lorem elitr sanctus eirmod
-                    takimata dolor ea invidunt.
-                  </p>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <ul className="list-group list-group-flush">
-                        <li className="list-group-item px-0">
-                          Sit erat duo lorem duo ea consetetur, et eirmod
-                          takimata.
-                        </li>
-                        <li className="list-group-item px-0">
-                          Amet kasd gubergren sit sanctus et lorem eos
-                          sadipscing at.
-                        </li>
-                        <li className="list-group-item px-0">
-                          Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                        </li>
-                        <li className="list-group-item px-0">
-                          Takimata ea clita labore amet ipsum erat justo
-                          voluptua. Nonumy.
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="col-md-6">
-                      <ul className="list-group list-group-flush">
-                        <li className="list-group-item px-0">
-                          Sit erat duo lorem duo ea consetetur, et eirmod
-                          takimata.
-                        </li>
-                        <li className="list-group-item px-0">
-                          Amet kasd gubergren sit sanctus et lorem eos
-                          sadipscing at.
-                        </li>
-                        <li className="list-group-item px-0">
-                          Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                        </li>
-                        <li className="list-group-item px-0">
-                          Takimata ea clita labore amet ipsum erat justo
-                          voluptua. Nonumy.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade" id="tab-pane-1">
+                <div className="tab-pane fade show active" id="tab-pane-1">
                   <div className="row">
                     <div className="col-md-6">
                       <h4 className="mb-4">

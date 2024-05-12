@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+  const date = new Date().getFullYear()
   return (
   <div className="container-fluid bg-dark text-secondary mt-5 pt-5">
   <div className="row px-xl-5 pt-5">
@@ -23,7 +24,6 @@ const Footer = () => {
             <Link to='/products' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Our Shop</Link>
             <Link to='/favorite' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Favorite</Link>
             <Link to='/cart' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Shoping Cart</Link>
-            <Link to='/order' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Order List</Link>
             <Link to='/contact' className="text-secondary"><i className="fa fa-angle-right mr-2" />Contact Us</Link>
           </div>
         </div>
@@ -34,7 +34,6 @@ const Footer = () => {
             <Link to='/products' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Our Shop</Link>
             <Link to='/favorite' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Favorite</Link>
             <Link to='/cart' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Shoping Cart</Link>
-            <Link to='/order' className="text-secondary mb-2"><i className="fa fa-angle-right mr-2" />Order List</Link>
             <Link to='/contact' className="text-secondary"><i className="fa fa-angle-right mr-2" />Contact Us</Link>
           </div>
         </div>
@@ -62,7 +61,7 @@ const Footer = () => {
   <div className="row border-top mx-xl-5 py-4" style={{borderColor: 'rgba(256, 256, 256, .1) !important'}}>
     <div className="col-md-6 px-xl-0">
       <p className="mb-md-0 text-center text-md-left text-secondary">
-        © 2023 - All Rights Reserved. Designed
+        © {date} - All Rights Reserved. Designed
         by 
         <Link className="text-primary"> Alloui Ala Eddine</Link>
       </p>

@@ -234,8 +234,7 @@
     }
     .registerMain:hover 
 {
-    border-radius: 40% 60% 53% 47% / 54% 34% 66% 46% ;
-
+    border-radius: none ;
 }
     .form{
         width: 100% !important;

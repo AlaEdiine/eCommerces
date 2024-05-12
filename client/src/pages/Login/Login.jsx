@@ -95,14 +95,6 @@ const Login = () => {
         <div className="loginMain">
           <SnackbarProvider autoHideDuration={2500} />
           <p className="p">Sign In</p>
-          
-          {/* <GoogleLogin
-            client_id= "330964914935-4bj41r4q1dcuen6kog14d2kce4frv65l.apps.googleusercontent.com"
-            successCallback={({ credential, select_by }) => {
-              console.log(credential, select_by);
-            }}
-          /> */}
-
           <form className="form" action="true" onSubmit={handleSubmit}>
             <label className="label">
               <PersonIcon className="icones" />

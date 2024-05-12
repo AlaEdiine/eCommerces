@@ -6,9 +6,7 @@ import Succes from '../../component/Snackbar/Succes';
 import { Box, Typography } from '@mui/material';
 
 const Favorite = () => {
-  useEffect(() =>{
-    window.scrollTo(0, 0);
-  })
+
   const {addTocart , dataLocalStorage ,   setDataLocalStorage} = useContext(ShopContext)
 
   const removeToLocalStorage = (product) => {
@@ -49,21 +47,7 @@ const Favorite = () => {
               <div className="carousel-item active">
                 <img className="w-100 h-100" src={elem.photo} alt="Image1" />
               </div>
-              <div className="carousel-item">
-                <img className="w-100 h-100" src={elem.photo}alt="Image2" />
-              </div>
-              <div className="carousel-item">
-                <img className="w-100 h-100" src={elem.photo} alt="Image3" />
-              </div>
             </div>
-  
-       
-          <a className="carousel-control-prev" href="#product-carousel" data-slide="prev">
-            <i className="fa fa-2x fa-angle-left text-dark" />
-          </a>
-          <a className="carousel-control-next" href="#product-carousel" data-slide="next">
-            <i className="fa fa-2x fa-angle-right text-dark" />
-          </a>
         </div>
       </div>
       <div className="col-lg-7 h-auto mb-30">
@@ -95,31 +79,7 @@ const Favorite = () => {
           <div className="d-flex mb-3">
 
           </div>
-          <div className="d-flex mb-4">
-            <strong className="text-dark mr-3">Colors:</strong>
-            <form>
-              <div className="custom-control custom-radio custom-control-inline">
-                <input type="radio" className="custom-control-input" id="color-1" name="color" />
-                <label className="custom-control-label" htmlFor="color-1">Black</label>
-              </div>
-              <div className="custom-control custom-radio custom-control-inline">
-                <input type="radio" className="custom-control-input" id="color-2" name="color" />
-                <label className="custom-control-label" htmlFor="color-2">White</label>
-              </div>
-              <div className="custom-control custom-radio custom-control-inline">
-                <input type="radio" className="custom-control-input" id="color-3" name="color" />
-                <label className="custom-control-label" htmlFor="color-3">Red</label>
-              </div>
-              <div className="custom-control custom-radio custom-control-inline">
-                <input type="radio" className="custom-control-input" id="color-4" name="color" />
-                <label className="custom-control-label" htmlFor="color-4">Blue</label>
-              </div>
-              <div className="custom-control custom-radio custom-control-inline">
-                <input type="radio" className="custom-control-input" id="color-5" name="color" />
-                <label className="custom-control-label" htmlFor="color-5">Green</label>
-              </div>
-            </form>
-          </div>
+        
           <div className="d-flex align-items-center mb-4 pt-2">
             <button className="btn btn-primary px-3"  onClick={() => addTocart(elem)}><i className="fa fa-shopping-cart mr-1" /> Add To
               Cart</button>

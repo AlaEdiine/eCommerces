@@ -8,9 +8,7 @@ import useFetch from "../../Hooks/useFetch";
 import { bgcolor } from "@mui/system";
 
 const Order = () => {
-  useEffect(() =>{
-    window.scrollTo(0, 0);
-  })
+
   const { total } = useContext(ShopContext);
   const [show, setShow] = useState(false);
 
