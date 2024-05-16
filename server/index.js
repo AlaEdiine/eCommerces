@@ -1,4 +1,4 @@
-const express = require("express");
+deconst express = require("express");
 const multer = require("multer");
 const stripe = require("stripe")(process.env.SECRET_STRIPE_KEY)
 const parser = require("body-parser");
@@ -31,8 +31,8 @@ app.use(session({
 // 'http://localhost:3000 https://client-57od.onrender.com',
 // Cors Policy
 const corsOptions ={
-  //  origin:'https://client-57od.onrender.com' ,
-  origin:'http://localhost:3000' ,
+   origin:'https://client-57od.onrender.com' ,
+ // origin:'http://localhost:3000' ,
   credentials:true, 
   optionSuccessStatus:200
 }
