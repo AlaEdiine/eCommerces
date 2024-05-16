@@ -1,4 +1,4 @@
-dedeconst express = require("express");
+const express = require("express");
 const multer = require("multer");
 const stripe = require("stripe")(process.env.SECRET_STRIPE_KEY)
 const parser = require("body-parser");
