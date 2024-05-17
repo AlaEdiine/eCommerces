@@ -19,6 +19,7 @@ const Cancel = () => {
       Rejected Paiement
               </Typography>
               </Box>
+//comment
   )
 }
 
