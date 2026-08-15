@@ -12,7 +12,7 @@ const Footer = () => {
       Hi! I am Ala Eddine, Full stack Js developer, passionate about development and technical culture, I have a creative mind that allows me to propose new innovative solutions and capable of working in a team, However I am open to any proposal that would allow me to unleash my full potential and gain a new experience. thank you for your attention
         </p>
       <p className="mb-2"><i className="fa fa-map-marker-alt text-primary mr-3" />29 Cite balawi 2 , kairouan 3182 , Tunisia</p>
-      <p className="mb-2"><i className="fa fa-envelope text-primary mr-3" />alaeddine.alouii@gmail.com</p>
+      <p className="mb-2"><i className="fa fa-envelope text-primary mr-3" />alaeddinealoui@tunisiepost.com</p>
       <p className="mb-0"><i className="fa fa-phone-alt text-primary mr-3" />+216 99149926</p>
     </div>
     <div className="col-lg-8 col-md-12">
